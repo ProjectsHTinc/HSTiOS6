@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,10 @@
 		6BF834FB25233911007245F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF834F925233911007245F8 /* LaunchScreen.storyboard */; };
 		6BF8350625233913007245F8 /* OPSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8350525233913007245F8 /* OPSTests.swift */; };
 		6BF8351125233913007245F8 /* OPSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8351025233913007245F8 /* OPSUITests.swift */; };
+		6BF8357125236811007245F8 /* APIURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8357025236811007245F8 /* APIURL.swift */; };
+		6BF8357925236930007245F8 /* APIFunctionName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8357825236930007245F8 /* APIFunctionName.swift */; };
+		6BF8358125236B04007245F8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8358025236B04007245F8 /* APIManager.swift */; };
+		6BF8358625236D84007245F8 /* AppVersionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF8358525236D84007245F8 /* AppVersionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		6BF8350C25233913007245F8 /* OPSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OPSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF8351025233913007245F8 /* OPSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPSUITests.swift; sourceTree = "<group>"; };
 		6BF8351225233913007245F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BF8357025236811007245F8 /* APIURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURL.swift; sourceTree = "<group>"; };
+		6BF8357825236930007245F8 /* APIFunctionName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFunctionName.swift; sourceTree = "<group>"; };
+		6BF8358025236B04007245F8 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		6BF8358525236D84007245F8 /* AppVersionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersionModel.swift; sourceTree = "<group>"; };
 		A29872C01FCB6AFF939DC42D /* Pods-OPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OPS.release.xcconfig"; path = "Target Support Files/Pods-OPS/Pods-OPS.release.xcconfig"; sourceTree = "<group>"; };
 		CC5E01F9C2A2E51CD479DC1B /* Pods-OPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OPS.debug.xcconfig"; path = "Target Support Files/Pods-OPS/Pods-OPS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,7 +95,6 @@
 				CC5E01F9C2A2E51CD479DC1B /* Pods-OPS.debug.xcconfig */,
 				A29872C01FCB6AFF939DC42D /* Pods-OPS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -118,8 +125,14 @@
 			children = (
 				6BF834EE252338F3007245F8 /* AppDelegate.swift */,
 				6BF834F0252338F3007245F8 /* SceneDelegate.swift */,
-				6BF834F2252338F3007245F8 /* ViewController.swift */,
-				6BF834F4252338F3007245F8 /* Main.storyboard */,
+				6BF8356725236743007245F8 /* APIManager */,
+				6BF835682523674F007245F8 /* Model */,
+				6BF8356925236756007245F8 /* Services */,
+				6BF8356B25236768007245F8 /* Presenter */,
+				6BF8356D25236787007245F8 /* Vc */,
+				6BF8356E25236792007245F8 /* Cell */,
+				6BF8356C25236772007245F8 /* Extension */,
+				6BF8356F252367C6007245F8 /* StoryBoards */,
 				6BF834F725233911007245F8 /* Assets.xcassets */,
 				6BF834F925233911007245F8 /* LaunchScreen.storyboard */,
 				6BF834FC25233911007245F8 /* Info.plist */,
@@ -143,6 +156,68 @@
 				6BF8351225233913007245F8 /* Info.plist */,
 			);
 			path = OPSUITests;
+			sourceTree = "<group>";
+		};
+		6BF8356725236743007245F8 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				6BF8357025236811007245F8 /* APIURL.swift */,
+				6BF8357825236930007245F8 /* APIFunctionName.swift */,
+				6BF8358025236B04007245F8 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		6BF835682523674F007245F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BF8358525236D84007245F8 /* AppVersionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BF8356925236756007245F8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6BF8356B25236768007245F8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6BF8356C25236772007245F8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6BF8356D25236787007245F8 /* Vc */ = {
+			isa = PBXGroup;
+			children = (
+				6BF834F2252338F3007245F8 /* ViewController.swift */,
+			);
+			path = Vc;
+			sourceTree = "<group>";
+		};
+		6BF8356E25236792007245F8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6BF8356F252367C6007245F8 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				6BF834F4252338F3007245F8 /* Main.storyboard */,
+			);
+			path = StoryBoards;
 			sourceTree = "<group>";
 		};
 		EA97A2150ED698A349B7C23F /* Frameworks */ = {
@@ -327,8 +402,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF8358625236D84007245F8 /* AppVersionModel.swift in Sources */,
+				6BF8358125236B04007245F8 /* APIManager.swift in Sources */,
+				6BF8357125236811007245F8 /* APIURL.swift in Sources */,
 				6BF834F3252338F3007245F8 /* ViewController.swift in Sources */,
 				6BF834EF252338F3007245F8 /* AppDelegate.swift in Sources */,
+				6BF8357925236930007245F8 /* APIFunctionName.swift in Sources */,
 				6BF834F1252338F3007245F8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +588,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V986NC4N5;
 				INFOPLIST_FILE = OPS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -530,7 +609,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6V986NC4N5;
 				INFOPLIST_FILE = OPS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
