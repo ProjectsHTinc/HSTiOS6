@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (4.7.3)
+  - HMSegmentedControl (1.5.6)
+  - IQKeyboardManagerSwift (6.5.5)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7.2)
+  - HMSegmentedControl
+  - IQKeyboardManagerSwift
+  - SDWebImage (~> 5.0)
+  - SwiftyJSON (~> 4.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - HMSegmentedControl
+    - IQKeyboardManagerSwift
+    - SDWebImage
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  HMSegmentedControl: 34c1f54d822d8308e7b24f5d901ec674dfa31352
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: 41484edf3f1a88c7bd42935a6a28967a673c6a49
+
+COCOAPODS: 1.9.1
