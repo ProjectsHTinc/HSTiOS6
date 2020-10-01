@@ -14,8 +14,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let url = APIURL.url + APIFunctionName.appVersion
         print(url,"Test")
+        self.performSegue(withIdentifier: "pop", sender: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "pop" {
+            let _ = segue.destination as! WelcomeVc
+        }
+    }
 
 }
 

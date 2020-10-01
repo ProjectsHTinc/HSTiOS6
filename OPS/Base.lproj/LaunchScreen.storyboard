@@ -22,13 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreenImage" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Ql-bgZ">
-                                <rect key="frame" x="99" y="305" width="216" height="216"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OPS" translatesAutoresizingMaskIntoConstraints="NO" id="53l-Ql-bgZ">
+                                <rect key="frame" x="99" y="311" width="216" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="YAF-yC-vRP"/>
+                                    <constraint firstAttribute="height" constant="216" id="j7s-Uw-WH2"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O. Panneerselvam" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-af-Ffp">
-                                <rect key="frame" x="20" y="542" width="374" height="34"/>
+                                <rect key="frame" x="20" y="551" width="374" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="t4g-j6-zCG"/>
+                                    <constraint firstAttribute="height" constant="34" id="X1l-om-anl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="24"/>
                                 <color key="textColor" name="blackColor"/>
@@ -38,11 +42,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2G0-af-Ffp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="07y-GZ-bUQ"/>
-                            <constraint firstItem="53l-Ql-bgZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="895-ns-7n0"/>
-                            <constraint firstItem="2G0-af-Ffp" firstAttribute="top" secondItem="53l-Ql-bgZ" secondAttribute="bottom" constant="21" id="ZcL-at-M6y"/>
-                            <constraint firstItem="53l-Ql-bgZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-35" id="Zpw-EY-MpY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2G0-af-Ffp" secondAttribute="trailing" constant="20" id="uAD-Tb-cXg"/>
+                            <constraint firstItem="53l-Ql-bgZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-29" id="B0N-4G-Tqr"/>
+                            <constraint firstItem="53l-Ql-bgZ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="S4y-LH-HjB"/>
+                            <constraint firstItem="2G0-af-Ffp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fCk-1j-cew"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2G0-af-Ffp" secondAttribute="trailing" constant="20" id="gz3-k0-jCP"/>
+                            <constraint firstItem="2G0-af-Ffp" firstAttribute="top" secondItem="53l-Ql-bgZ" secondAttribute="bottom" constant="24" id="xiU-yF-84c"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -52,7 +56,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="SplashScreenImage" width="216" height="216"/>
+        <image name="OPS" width="250" height="250"/>
         <namedColor name="blackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		338F13DFD037B48C762A41F2 /* Pods_OPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3E83A60D93B8A0AA15DAA8 /* Pods_OPS.framework */; };
-		6B6FF64F2523B1D900B26C1A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B6FF64C2523B1D900B26C1A /* Poppins-Regular.ttf */; };
-		6B6FF6502523B1D900B26C1A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B6FF64D2523B1D900B26C1A /* Poppins-Medium.ttf */; };
-		6B6FF6512523B1D900B26C1A /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B6FF64E2523B1D900B26C1A /* Poppins-SemiBold.ttf */; };
 		6B6FF6562523BAC400B26C1A /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B6FF6552523BAC400B26C1A /* Dashboard.storyboard */; };
-		6B6FF6642523C33600B26C1A /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6FF6632523C33600B26C1A /* MyNavigationController.swift */; };
+		6B8B05DC2525DF9900EE03C4 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B05DB2525DF9800EE03C4 /* TabbarController.swift */; };
+		6B8B05EE2525E56000EE03C4 /* NavigationBarTitleOnLeftSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8B05ED2525E56000EE03C4 /* NavigationBarTitleOnLeftSide.swift */; };
+		6B8B05F62525E8EC00EE03C4 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B8B05F52525E8EC00EE03C4 /* Poppins-Bold.ttf */; };
+		6B8B05FB2525E8F800EE03C4 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B8B05FA2525E8F800EE03C4 /* Poppins-Medium.ttf */; };
+		6B8B06002525E90100EE03C4 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B8B05FF2525E90100EE03C4 /* Poppins-Regular.ttf */; };
+		6BA2FFBC2525F87C007D4DF4 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2FFBB2525F87C007D4DF4 /* Poppins-SemiBold.ttf */; };
+		6BA2FFD625260F97007D4DF4 /* WelcomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2FFD525260F97007D4DF4 /* WelcomeVc.swift */; };
 		6BF834EF252338F3007245F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF834EE252338F3007245F8 /* AppDelegate.swift */; };
 		6BF834F1252338F3007245F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF834F0252338F3007245F8 /* SceneDelegate.swift */; };
 		6BF834F3252338F3007245F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF834F2252338F3007245F8 /* ViewController.swift */; };
@@ -46,11 +49,14 @@
 
 /* Begin PBXFileReference section */
 		1F3E83A60D93B8A0AA15DAA8 /* Pods_OPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B6FF64C2523B1D900B26C1A /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
-		6B6FF64D2523B1D900B26C1A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
-		6B6FF64E2523B1D900B26C1A /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		6B6FF6552523BAC400B26C1A /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
-		6B6FF6632523C33600B26C1A /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
+		6B8B05DB2525DF9800EE03C4 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		6B8B05ED2525E56000EE03C4 /* NavigationBarTitleOnLeftSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleOnLeftSide.swift; sourceTree = "<group>"; };
+		6B8B05F52525E8EC00EE03C4 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		6B8B05FA2525E8F800EE03C4 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		6B8B05FF2525E90100EE03C4 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		6BA2FFBB2525F87C007D4DF4 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		6BA2FFD525260F97007D4DF4 /* WelcomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVc.swift; sourceTree = "<group>"; };
 		6BF834EB252338F3007245F8 /* OPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF834EE252338F3007245F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BF834F0252338F3007245F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,9 +117,10 @@
 		6B6FF6482523B19A00B26C1A /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				6B6FF64D2523B1D900B26C1A /* Poppins-Medium.ttf */,
-				6B6FF64C2523B1D900B26C1A /* Poppins-Regular.ttf */,
-				6B6FF64E2523B1D900B26C1A /* Poppins-SemiBold.ttf */,
+				6B8B05FF2525E90100EE03C4 /* Poppins-Regular.ttf */,
+				6B8B05FA2525E8F800EE03C4 /* Poppins-Medium.ttf */,
+				6B8B05F52525E8EC00EE03C4 /* Poppins-Bold.ttf */,
+				6BA2FFBB2525F87C007D4DF4 /* Poppins-SemiBold.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -121,7 +128,6 @@
 		6B6FF65A2523C29C00B26C1A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				6B6FF6632523C33600B26C1A /* MyNavigationController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -223,6 +229,7 @@
 		6BF8356C25236772007245F8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6B8B05ED2525E56000EE03C4 /* NavigationBarTitleOnLeftSide.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -231,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				6BF834F2252338F3007245F8 /* ViewController.swift */,
+				6B8B05DB2525DF9800EE03C4 /* TabbarController.swift */,
+				6BA2FFD525260F97007D4DF4 /* WelcomeVc.swift */,
 			);
 			path = Vc;
 			sourceTree = "<group>";
@@ -366,11 +375,12 @@
 			files = (
 				6BF834FB25233911007245F8 /* LaunchScreen.storyboard in Resources */,
 				6BF834F825233911007245F8 /* Assets.xcassets in Resources */,
+				6B8B06002525E90100EE03C4 /* Poppins-Regular.ttf in Resources */,
+				6B8B05F62525E8EC00EE03C4 /* Poppins-Bold.ttf in Resources */,
+				6B8B05FB2525E8F800EE03C4 /* Poppins-Medium.ttf in Resources */,
+				6BA2FFBC2525F87C007D4DF4 /* Poppins-SemiBold.ttf in Resources */,
 				6BF834F6252338F3007245F8 /* Main.storyboard in Resources */,
-				6B6FF6512523B1D900B26C1A /* Poppins-SemiBold.ttf in Resources */,
-				6B6FF64F2523B1D900B26C1A /* Poppins-Regular.ttf in Resources */,
 				6B6FF6562523BAC400B26C1A /* Dashboard.storyboard in Resources */,
-				6B6FF6502523B1D900B26C1A /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,12 +448,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BF8358625236D84007245F8 /* AppVersionModel.swift in Sources */,
-				6B6FF6642523C33600B26C1A /* MyNavigationController.swift in Sources */,
 				6BF8358125236B04007245F8 /* APIManager.swift in Sources */,
 				6BF8357125236811007245F8 /* APIURL.swift in Sources */,
 				6BF834F3252338F3007245F8 /* ViewController.swift in Sources */,
+				6B8B05EE2525E56000EE03C4 /* NavigationBarTitleOnLeftSide.swift in Sources */,
 				6BF834EF252338F3007245F8 /* AppDelegate.swift in Sources */,
+				6BA2FFD625260F97007D4DF4 /* WelcomeVc.swift in Sources */,
 				6BF8357925236930007245F8 /* APIFunctionName.swift in Sources */,
+				6B8B05DC2525DF9900EE03C4 /* TabbarController.swift in Sources */,
 				6BF834F1252338F3007245F8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
