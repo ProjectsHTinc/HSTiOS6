@@ -8,7 +8,8 @@
 import UIKit
 
 struct APIFunctionName {
-    
     static let appVersion = "version_check/"
-
+    static let welcomeVideo = "intro_video/"
+    static let homeUrl = "newsfeeds_categoryid/"
+    static let homeDetailUrl = "newsfeed_details/"
 }

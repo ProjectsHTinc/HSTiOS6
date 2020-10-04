@@ -6,16 +6,38 @@
 //
 
 import UIKit
+import YoutubePlayer_in_WKWebView
 
 class WelcomeVc: UIViewController {
 
+    @IBOutlet weak var playerView: WKYTPlayerView!
+    
+    /*Get welcome video Url*/
+    let presenter = WelcomeVideoPresenter(welcomeVideoServices: WelcomeVideoServices())
+    var resp = [VideoData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        callAPI()
+        
     }
     
-
+    func callAPI ()
+    {
+        presenter.attachView(view: self)
+        presenter.getWelcomeVideoUrl(version_Code: "1")
+    }
+    
+    func loadWelcomeVideo(url:String) {
+        playerView.load(withVideoId: url)
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -26,4 +48,31 @@ class WelcomeVc: UIViewController {
     }
     */
 
+}
+extension WelcomeVc: VideoView
+{
+    func startLoading() {
+        //
+    }
+    
+    func finishLoading() {
+        //
+    }
+    
+    func setVideoUrl(videoUrl: [VideoData]) {
+        resp = videoUrl
+        var videoUrl = ""
+        for item in resp
+        {
+            videoUrl = item.video_url ?? ""
+        }
+        loadWelcomeVideo(url: videoUrl)
+    }
+    
+    func setEmpty(errorMessage: String) {
+        AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: errorMessage, complition: {
+        })
+    }
+    
+    
 }

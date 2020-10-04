@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "80BCF368-7F46-4FC7-80E6-3CCEADAD5ECF"
+            uuid = "83A1AB38-72A6-43AA-BDDA-946EB1A621E2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OPS/Vc/ViewController.swift"
+            filePath = "OPS/Vc/WelcomeVc.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "978607DE-D384-4357-9746-B9FA85CFFDCE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OPS/Vc/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "setVideoUrl(videoUrl:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

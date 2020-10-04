@@ -7,4 +7,5 @@
    pod 'SDWebImage', '~> 5.0'
    pod 'IQKeyboardManagerSwift'
    pod 'HMSegmentedControl'
+   pod "YoutubePlayer-in-WKWebView", "~> 0.2.0" 
    end

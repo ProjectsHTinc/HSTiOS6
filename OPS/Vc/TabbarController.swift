@@ -9,6 +9,8 @@
 import UIKit
 
 class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearchControllerDelegate {
+    
+    var menuButton = UIButton(frame: CGRect.zero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +21,12 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
         tabBar.clipsToBounds = true
         navTitleOnLeftSide ()
-        setupMiddleButton()
+        setupMiddleButton ()
         searchBar ()
     }
     
-    func searchBar ()
+
+    func searchBar()
     {
         
         let searchController = UISearchController(searchResultsController: nil)
@@ -56,31 +59,36 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         navigationItem.hidesSearchBarWhenScrolling = false
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        menuButton.frame.origin.y = self.view.bounds.height - menuButton.frame.height - self.view.safeAreaInsets.bottom
+
+    }
     
     func setupMiddleButton() {
-           let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 54, height: 54))
 
-           var menuButtonFrame = menuButton.frame
-           menuButtonFrame.origin.y = view.bounds.height - menuButtonFrame.height - 20
-           menuButtonFrame.origin.x = view.bounds.width/2 - menuButtonFrame.size.width/2
-           menuButton.frame = menuButtonFrame
+        menuButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        var menuButtonFrame = menuButton.frame
+        menuButtonFrame.origin.y = self.view.bounds.height - menuButtonFrame.height - self.view.safeAreaInsets.bottom
+        menuButtonFrame.origin.x = self.view.bounds.width/2 - menuButtonFrame.size.width/2
+        menuButton.frame = menuButtonFrame
+        
+        menuButton.layer.cornerRadius = menuButtonFrame.height/2
+        menuButton.setImage(UIImage(named: "OPS"), for: UIControl.State.normal)
 
-           //menuButton.backgroundColor = UIColor.red
-           menuButton.layer.cornerRadius = menuButtonFrame.height/2
-           view.addSubview(menuButton)
+        //menuButton.backgroundColor = UIColor.green
+        self.view.addSubview(menuButton)
+        self.view.layoutIfNeeded()
 
-           menuButton.setImage(UIImage(named: "OPS"), for: .normal)
-           //menuButton.addTarget(self, action: #selector(menuButtonAction(sender:)), for: .touchUpInside)
+    }
 
-           view.layoutIfNeeded()
+    // Menu Button Touch Action
+    @objc func menuButtonAction(sender: UIButton) {
+        self.selectedIndex = 2
+        // console print to verify the button works
+        print("Middle Button was just pressed!")
        }
-
-
-       // MARK: - Actions
-
-//       @objc private func menuButtonAction(sender: UIButton) {
-//           selectedIndex = 2
-//       }
+    
 
     /*
     // MARK: - Navigation
