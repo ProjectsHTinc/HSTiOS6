@@ -29,6 +29,8 @@ class HomePageDetail: UIViewController {
     var descp = String()
     var newsfeed_id = String()
     var nf_cover_image = String()
+    var fromView = String()
+
     /*Get welcome video Url*/
     let presenter = HomePageDetailPresenter(homePageDetailServices: HomePageDetailServices())
     var resp = [HomePageDetailData]()
@@ -51,11 +53,26 @@ class HomePageDetail: UIViewController {
 
     
     func updateDetails() {
-        self.titleLabel.text = eventTitle
-        self.dateLabel.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
-        self.descrip.text = descp
-        self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
-        self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+        if fromView == "imageAll"
+        {
+            self.titleLabel.text = eventTitle
+            self.dateLabel.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
+            self.descrip.isHidden = true
+            self.descripLabel.isHidden = true
+            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
+            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+        }
+        else
+        {
+            self.titleLabel.text = eventTitle
+            self.dateLabel.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
+            self.descrip.isHidden = false
+            self.descripLabel.isHidden = false
+            self.descrip.text = descp
+            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
+            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+        }
+
     }
     
     func startTimer() {

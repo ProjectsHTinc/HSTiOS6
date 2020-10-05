@@ -1,15 +1,13 @@
 //
-//  Home.swift
+//  Event.swift
 //  OPS
 //
-//  Created by Happy Sanz Tech on 03/10/20.
+//  Created by Happy Sanz Tech on 04/10/20.
 //
 
 import UIKit
-import YoutubePlayer_in_WKWebView
 
-
-class Home: UIViewController {
+class Event: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -41,7 +39,7 @@ class Home: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: "1", nf_category_id: "2", offset: "0", rowcount: "5")
+        self.callAPI(user_id: "1", nf_category_id: "3", offset: "0", rowcount: "5")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,30 +53,33 @@ class Home: UIViewController {
     }
     
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if (segue.identifier == "to_detail"){
-            let vc = segue.destination as! HomePageDetail
-            vc.newsfeed_id = self.newsfeed_id
-            vc.nf_cover_image = self.nf_cover_image
-            vc.eventTitle = self.eventTitle
-            vc.date = self.date
-            vc.likesCount = self.likesCnt
-            vc.shareCount = self.shareCnt
-            vc.descp = self.descp
-            vc.fromView = "home"
-
-        }
+    @IBAction func liveEvent(_ sender: Any)
+    {
+        self.performSegue(withIdentifier: "liveEvents", sender: self)
     }
-    
+
+     // MARK: - Navigation
+
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         if (segue.identifier == "to_detail"){
+             let vc = segue.destination as! HomePageDetail
+             vc.newsfeed_id = self.newsfeed_id
+             vc.nf_cover_image = self.nf_cover_image
+             vc.eventTitle = self.eventTitle
+             vc.date = self.date
+             vc.likesCount = self.likesCnt
+             vc.shareCount = self.shareCnt
+             vc.descp = self.descp
+
+         }
+     }
 
 }
 
-extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
+extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
 {
     func startLoading() {
         self.view.activityStartAnimating()
