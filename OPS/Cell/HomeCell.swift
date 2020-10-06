@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import YoutubePlayer_in_WKWebView
 
 class HomeCell: UITableViewCell {
 
-    @IBOutlet weak var playerView: WKYTPlayerView!
+    @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var discription: UILabel!

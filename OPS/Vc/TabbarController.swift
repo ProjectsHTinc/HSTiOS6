@@ -8,9 +8,10 @@
 
 import UIKit
 
-class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearchControllerDelegate {
+class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearchControllerDelegate, UISearchBarDelegate {
     
     var menuButton = UIButton(frame: CGRect.zero)
+    var searchController = UISearchController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +30,12 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
     func searchBar()
     {
         
-        let searchController = UISearchController(searchResultsController: nil)
+        searchController = UISearchController(searchResultsController: nil)
         searchController.delegate = self
-
         let searchBar = searchController.searchBar
         searchBar.tintColor = UIColor.white
         searchBar.barTintColor = UIColor.white
+        searchController.searchBar.delegate = self
 
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
             textfield.textColor = UIColor.blue
@@ -89,16 +90,26 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         print("Middle Button was just pressed!")
        }
     
+    func searchBarSearchButtonClicked( _ searchBar: UISearchBar)
+    {
+        self.performSegue(withIdentifier: "to_Search", sender: searchBar.text)
+        self.searchController.isActive = false
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "to_Search")
+        {
+            let vc = segue.destination as! Search
+            vc.keyword = sender as! String
+        }
     }
-    */
+    
 
 }
 

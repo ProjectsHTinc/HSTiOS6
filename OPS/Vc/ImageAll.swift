@@ -20,6 +20,7 @@ class ImageAll: UIViewController {
     var shareCnt = String()
     var newsfeed_id = String()
     var nf_cover_image = String()
+    var videoId = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -55,7 +55,7 @@ class HomePageDetail: UIViewController {
     func updateDetails() {
         if fromView == "imageAll"
         {
-            self.titleLabel.text = eventTitle
+            self.titleLabel.setHTMLFromString(text: eventTitle)
             self.dateLabel.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
             self.descrip.isHidden = true
             self.descripLabel.isHidden = true
@@ -64,11 +64,11 @@ class HomePageDetail: UIViewController {
         }
         else
         {
-            self.titleLabel.text = eventTitle
+            self.titleLabel.setHTMLFromString(text: eventTitle)
             self.dateLabel.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
             self.descrip.isHidden = false
             self.descripLabel.isHidden = false
-            self.descrip.text = descp
+            self.descrip.setHTMLFromString(text: descp)
             self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
             self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
         }

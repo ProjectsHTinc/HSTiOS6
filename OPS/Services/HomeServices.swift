@@ -9,9 +9,9 @@ import UIKit
 
 class HomeServices {
     
-    public func homeAPI (user_id:String, nf_category_id:String, offset:String, rowcount:String,onSuccess successCallback: ((_ resp: [HomeModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    public func homeAPI (user_id:String, nf_category_id:String, search_text:String, offset:String, rowcount:String,onSuccess successCallback: ((_ resp: [HomeModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
         APIManager.instance.homeAPI(
-            user_id:user_id, nf_category_id:nf_category_id, offset:offset, rowcount:rowcount, onSuccess: { (resp) in
+            user_id:user_id, nf_category_id:nf_category_id, search_text:search_text, offset:offset, rowcount:rowcount, onSuccess: { (resp) in
                 successCallback?(resp)
             },
             onFailure: { (errorMessage) in

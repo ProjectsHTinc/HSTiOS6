@@ -104,11 +104,22 @@ class APIManager: NSObject {
       )
     }
     
-    func homeAPI (user_id:String, nf_category_id:String, offset:String, rowcount:String, onSuccess successCallback: ((_ resp: [HomeModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+    func homeAPI (user_id:String, nf_category_id:String, search_text:String, offset:String, rowcount:String, onSuccess successCallback: ((_ resp: [HomeModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
         // Build URL
-        let url = APIURL.url + APIFunctionName.homeUrl
-        // Set Parameters
-        let parameters: Parameters =  ["user_id":user_id, "nf_category_id":nf_category_id, "offset":offset, "rowcount":rowcount]
+        var url = String()
+        var parameters: Parameters
+        if search_text == "No"
+        {
+            url = APIURL.url + APIFunctionName.homeUrl
+            // Set Parameters
+            parameters =  ["user_id":user_id, "nf_category_id":nf_category_id, "offset":offset, "rowcount":rowcount]
+        }
+        else
+        {
+            url = APIURL.url + APIFunctionName.searchUrl
+            // Set Parameters
+            parameters =  ["user_id":user_id, "search_text":search_text, "offset":offset, "rowcount":rowcount]
+        }
         // call API
         self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
         // Create dictionary

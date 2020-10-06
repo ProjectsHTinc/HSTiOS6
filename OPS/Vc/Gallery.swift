@@ -17,6 +17,14 @@ class Gallery: UITableViewController {
     let presenter = GalleryPresenter(galleryServices: GalleryServices())
     var respImages = [GalleryData]()
     var respVideos = [GalleryData]()
+    
+    var eventTitle = String()
+    var date = String()
+    var likesCnt = String()
+    var shareCnt = String()
+    var newsfeed_id = String()
+    var nf_cover_image = String()
+    var videoId = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,15 +107,34 @@ class Gallery: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "to_detail"){
+            let vc = segue.destination as! HomePageDetail
+            vc.newsfeed_id = self.newsfeed_id
+            vc.nf_cover_image = self.nf_cover_image
+            vc.eventTitle = self.eventTitle
+            vc.date = self.date
+            vc.likesCount = self.likesCnt
+            vc.shareCount = self.shareCnt
+            //vc.descp = self.descp
+            vc.fromView = "imageAll"
+        }
+        else if (segue.identifier == "to_videoDetail")
+        {
+            let vc = segue.destination as! VideoDetail
+            vc.eventName = self.eventTitle
+            vc.date = self.date
+            vc.likeCount = self.likesCnt
+            vc.shareCount = self.shareCnt
+            vc.videoId = self.videoId
+        }
     }
-    */
+    
 
 }
 
@@ -177,6 +204,45 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
     
     @objc func likeButtonVideoClicked() {
 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == self.imageCollectionView
+        {
+            let res = respImages[indexPath.row]
+            if LocalizationSystem.sharedInstance.getLanguage() == "en"
+            {
+                self.eventTitle = res.title_en!
+            }
+            else
+            {
+                self.eventTitle = res.title_ta!
+            }
+            self.date = res.news_date!
+            self.likesCnt = res.likes_count!
+            self.shareCnt = res.share_count!
+            self.newsfeed_id = res.newsfeed_id!
+            self.nf_cover_image = res.nf_cover_image!
+            self.performSegue(withIdentifier: "to_detail", sender: self)
+        }
+        else
+        {
+            let res = respVideos[indexPath.row]
+            if LocalizationSystem.sharedInstance.getLanguage() == "en"
+            {
+                self.eventTitle = res.title_en!
+            }
+            else
+            {
+                self.eventTitle = res.title_ta!
+            }
+            self.date = res.news_date!
+            self.likesCnt = res.likes_count!
+            self.shareCnt = res.share_count!
+            self.videoId = res.nf_video_token_id!
+            self.performSegue(withIdentifier: "to_videoDetail", sender: self)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

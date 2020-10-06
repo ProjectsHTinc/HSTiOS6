@@ -51,11 +51,11 @@ class HomePresenter {
         homeView = nil
     }
     
-    func getHomeResp(user_id:String, nf_category_id:String, offset:String, rowcount:String) {
+    func getHomeResp(user_id:String, nf_category_id:String, search_text:String, offset:String, rowcount:String) {
         
         self.homeView?.startLoading()
         homeServices.homeAPI(
-            user_id:user_id, nf_category_id:nf_category_id, offset:offset, rowcount:rowcount, onSuccess: { (resp) in
+            user_id:user_id, nf_category_id:nf_category_id, search_text:search_text, offset:offset, rowcount:rowcount, onSuccess: { (resp) in
                 self.homeView?.finishLoading()
                 if (resp.count == 0){
                 } else {

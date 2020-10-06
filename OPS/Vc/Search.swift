@@ -1,15 +1,13 @@
 //
-//  Home.swift
+//  Search.swift
 //  OPS
 //
-//  Created by Happy Sanz Tech on 03/10/20.
+//  Created by Happy Sanz Tech on 06/10/20.
 //
 
 import UIKit
-import YoutubePlayer_in_WKWebView
 
-
-class Home: UIViewController {
+class Search: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,14 +33,14 @@ class Home: UIViewController {
     var descp = String()
     var newsfeed_id = String()
     var nf_cover_image = String()
+    var keyword = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: "1", nf_category_id: "2", search_text: "No", offset: "0", rowcount: "5")
-        self.performSegue(withIdentifier: "pop", sender: self)
+        self.callAPI(user_id: "1", nf_category_id: "2", search_text: keyword, offset: "0", rowcount: "5")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +52,7 @@ class Home: UIViewController {
         presenter.attachView(view: self)
         presenter.getHomeResp(user_id: user_id, nf_category_id: nf_category_id, search_text: search_text, offset: offset, rowcount: rowcount)
     }
-    
+
     
     // MARK: - Navigation
 
@@ -72,14 +70,12 @@ class Home: UIViewController {
             vc.shareCount = self.shareCnt
             vc.descp = self.descp
             vc.fromView = "home"
-
         }
     }
     
-
 }
 
-extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
+extension Search: HomeView , UITableViewDelegate, UITableViewDataSource
 {
     func startLoading() {
         self.view.activityStartAnimating()
@@ -131,7 +127,8 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeCell
         cell.eventImage.sd_setImage(with: URL(string: nf_cover_imageArr[indexPath.row]), placeholderImage: UIImage(named: ""))
-
+        let formatedDate = self.formattedDateFromString(dateString: dateArr[indexPath.row], withFormat: "dd MMM yyyy")
+        cell.date.text = formatedDate
         let likecount = likeCount[indexPath.row]
         let sharecount = shareCount[indexPath.row]
         cell.likeOutlet.setTitle(likecount + " " + "Likes", for: UIControl.State.normal)
@@ -147,15 +144,11 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
             
             cell.title.setHTMLFromString(text: title_en[indexPath.row])
             cell.discription.setHTMLFromString(text:  descrip_en[indexPath.row])
-            let formatedDate = self.formattedDateFromString(dateString: dateArr[indexPath.row], withFormat: "dd MMM yyyy")
-            cell.date.text = formatedDate
         }
         else
         {
             cell.title.setHTMLFromString(text: title_ta[indexPath.row])
             cell.discription.setHTMLFromString(text:  descrip_ta[indexPath.row])
-            let formatedDate = self.formattedDateFromString(dateString: dateArr[indexPath.row], withFormat: "dd MMM yyyy")
-            cell.date.text = formatedDate
         }
 
         return cell
@@ -177,7 +170,7 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement
             {
                 let lE = lastElement + 1
-                self.callAPI(user_id: "1", nf_category_id: "2", search_text: "No", offset: String(lE), rowcount: "5")
+                self.callAPI(user_id: "1", nf_category_id: "2", search_text: keyword, offset: String(lE), rowcount: "5")
 
             }
         }

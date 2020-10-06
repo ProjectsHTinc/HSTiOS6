@@ -49,7 +49,7 @@ class Event: UIViewController {
     func callAPI(user_id:String, nf_category_id:String, offset:String, rowcount:String)
     {
         presenter.attachView(view: self)
-        presenter.getHomeResp(user_id: user_id, nf_category_id: nf_category_id, offset: offset, rowcount: rowcount)
+        presenter.getHomeResp(user_id: user_id, nf_category_id: nf_category_id, search_text: "No", offset: offset, rowcount: rowcount)
     }
     
     
@@ -130,7 +130,7 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeCell
-        cell.playerView.load(withVideoId: videoUrl[indexPath.row])
+        cell.eventImage.sd_setImage(with: URL(string: nf_cover_imageArr[indexPath.row]), placeholderImage: UIImage(named: ""))
         let formatedDate = self.formattedDateFromString(dateString: dateArr[indexPath.row], withFormat: "dd MMM yyyy")
         cell.date.text = formatedDate
         let likecount = likeCount[indexPath.row]
@@ -145,14 +145,16 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
         
         if LocalizationSystem.sharedInstance.getLanguage() == "en"
         {
-            cell.title.text = title_en[indexPath.row]
-            cell.discription.text = descrip_en[indexPath.row]
-
+            
+            cell.title.setHTMLFromString(text: title_en[indexPath.row])
+            cell.title.textAlignment = .center
+            cell.discription.setHTMLFromString(text: descrip_en[indexPath.row])
         }
         else
         {
-            cell.title.text = title_ta[indexPath.row]
-            cell.discription.text = descrip_ta[indexPath.row]
+            cell.title.setHTMLFromString(text: title_ta[indexPath.row])
+            cell.title.textAlignment = .center
+            cell.discription.setHTMLFromString(text: descrip_ta[indexPath.row])
         }
 
         return cell
