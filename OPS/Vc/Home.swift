@@ -41,7 +41,7 @@ class Home: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: "1", nf_category_id: "2", search_text: "No", offset: "0", rowcount: "5")
+        self.callAPI(user_id: "1", nf_category_id: "2", search_text: "No", offset: "0", rowcount: "50")
         self.performSegue(withIdentifier: "pop", sender: self)
     }
     
@@ -131,17 +131,14 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! HomeCell
         cell.eventImage.sd_setImage(with: URL(string: nf_cover_imageArr[indexPath.row]), placeholderImage: UIImage(named: ""))
-
         let likecount = likeCount[indexPath.row]
         let sharecount = shareCount[indexPath.row]
         cell.likeOutlet.setTitle(likecount + " " + "Likes", for: UIControl.State.normal)
         cell.shareOutlet.setTitle(sharecount + " " + "Share", for: UIControl.State.normal)
         cell.likeOutlet.tag = indexPath.row
         cell.shareOutlet.tag = indexPath.row
-        
         cell.likeOutlet.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         cell.shareOutlet.addTarget(self, action: #selector(shareButtonClicked), for: .touchUpInside)
-        
         if LocalizationSystem.sharedInstance.getLanguage() == "en"
         {
             
@@ -157,12 +154,11 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
             let formatedDate = self.formattedDateFromString(dateString: dateArr[indexPath.row], withFormat: "dd MMM yyyy")
             cell.date.text = formatedDate
         }
-
         return cell
     }
     
     @objc func likeButtonClicked() {
-
+        
     }
     
     @objc func shareButtonClicked() {
