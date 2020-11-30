@@ -76,10 +76,10 @@ class ChooseLanguage: UIViewController {
             AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: "Please select the language before confirm", complition: {
             })
         }
-        
-        self.performSegue(withIdentifier: "refresh", sender: self)
-        
+        //self.performSegue(withIdentifier: "refresh", sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
+
     
     /*
     // MARK: - Navigation

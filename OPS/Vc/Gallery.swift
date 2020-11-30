@@ -17,7 +17,7 @@ class Gallery: UITableViewController {
     let presenter = GalleryPresenter(galleryServices: GalleryServices())
     var respImages = [GalleryData]()
     var respVideos = [GalleryData]()
-    
+    var user_id = String()
     var eventTitle = String()
     var date = String()
     var likesCnt = String()
@@ -40,7 +40,7 @@ class Gallery: UITableViewController {
     
     func callAPI() {
         presenter.attachView(view: self)
-        presenter.getGallery(user_id: "1")
+        presenter.getGallery(user_id: self.user_id)
     }
     
     @IBAction func imageViewAll(_ sender: Any) {

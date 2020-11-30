@@ -12,6 +12,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
     
     var menuButton = UIButton(frame: CGRect.zero)
     var searchController = UISearchController()
+    var user_id = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         navTitleOnLeftSide ()
         setupMiddleButton ()
         searchBar ()
+
     }
     
 
@@ -94,6 +96,18 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
     {
         self.performSegue(withIdentifier: "to_Search", sender: searchBar.text)
         self.searchController.isActive = false
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+          if let vc = viewController as? Home {
+            vc.user_id = self.user_id
+          }
+          else if let vc = viewController as? Gallery {
+             vc.user_id = self.user_id
+          }
+          else if let vc = viewController as? Event {
+             vc.user_id = self.user_id
+          }
     }
 
     

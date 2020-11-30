@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1801039B2574EE9700227154 /* LikeandShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801039A2574EE9700227154 /* LikeandShareModel.swift */; };
+		180103A02574EEF300227154 /* LikeandShareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801039F2574EEF300227154 /* LikeandShareService.swift */; };
+		180103A52574EFA900227154 /* LikeandSharePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180103A42574EFA900227154 /* LikeandSharePresenter.swift */; };
+		185A60CA257398FC009DBA67 /* loginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60C9257398FC009DBA67 /* loginModel.swift */; };
+		185A60CF2573990F009DBA67 /* otpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60CE2573990F009DBA67 /* otpModel.swift */; };
+		185A60D725739928009DBA67 /* loginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60D325739927009DBA67 /* loginPresenter.swift */; };
+		185A60D825739928009DBA67 /* otpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60D425739927009DBA67 /* otpService.swift */; };
+		185A60D925739928009DBA67 /* otpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60D525739927009DBA67 /* otpPresenter.swift */; };
+		185A60DA25739928009DBA67 /* loginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60D625739928009DBA67 /* loginService.swift */; };
+		185A60E225739A58009DBA67 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60E125739A58009DBA67 /* login.swift */; };
+		185A60E72573A200009DBA67 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60E62573A200009DBA67 /* constants.swift */; };
+		185A60EC2573A225009DBA67 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60EB2573A225009DBA67 /* Reachability.swift */; };
+		185A60F12573A255009DBA67 /* otp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60F02573A255009DBA67 /* otp.swift */; };
+		185A60F62573A409009DBA67 /* BottomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60F52573A409009DBA67 /* BottomBorder.swift */; };
+		185A60FB2573A44D009DBA67 /* userDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A60FA2573A44D009DBA67 /* userDefault.swift */; };
 		338F13DFD037B48C762A41F2 /* Pods_OPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3E83A60D93B8A0AA15DAA8 /* Pods_OPS.framework */; };
 		6B237C52252AFE0E0001081F /* LiveEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B237C51252AFE0E0001081F /* LiveEvents.swift */; };
 		6B237C57252AFE400001081F /* LiveEventsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B237C56252AFE400001081F /* LiveEventsCell.swift */; };
@@ -94,6 +109,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1801039A2574EE9700227154 /* LikeandShareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeandShareModel.swift; sourceTree = "<group>"; };
+		1801039F2574EEF300227154 /* LikeandShareService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeandShareService.swift; sourceTree = "<group>"; };
+		180103A42574EFA900227154 /* LikeandSharePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeandSharePresenter.swift; sourceTree = "<group>"; };
+		185A60C9257398FC009DBA67 /* loginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginModel.swift; sourceTree = "<group>"; };
+		185A60CE2573990F009DBA67 /* otpModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otpModel.swift; sourceTree = "<group>"; };
+		185A60D325739927009DBA67 /* loginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginPresenter.swift; sourceTree = "<group>"; };
+		185A60D425739927009DBA67 /* otpService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otpService.swift; sourceTree = "<group>"; };
+		185A60D525739927009DBA67 /* otpPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otpPresenter.swift; sourceTree = "<group>"; };
+		185A60D625739928009DBA67 /* loginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loginService.swift; sourceTree = "<group>"; };
+		185A60E125739A58009DBA67 /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		185A60E62573A200009DBA67 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		185A60EB2573A225009DBA67 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		185A60F02573A255009DBA67 /* otp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = otp.swift; sourceTree = "<group>"; };
+		185A60F52573A409009DBA67 /* BottomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomBorder.swift; sourceTree = "<group>"; };
+		185A60FA2573A44D009DBA67 /* userDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userDefault.swift; sourceTree = "<group>"; };
 		1F3E83A60D93B8A0AA15DAA8 /* Pods_OPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B237C51252AFE0E0001081F /* LiveEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEvents.swift; sourceTree = "<group>"; };
 		6B237C56252AFE400001081F /* LiveEventsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveEventsCell.swift; sourceTree = "<group>"; };
@@ -229,6 +259,9 @@
 				6BA45D822529CD5100CB928B /* LocalizationSystem.swift */,
 				6BFE5DB42528A0ED004EB9AA /* ActivityIndicator.swift */,
 				6BFE5DAF2528A0D8004EB9AA /* AlertController.swift */,
+				185A60E62573A200009DBA67 /* constants.swift */,
+				185A60EB2573A225009DBA67 /* Reachability.swift */,
+				185A60F52573A409009DBA67 /* BottomBorder.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -327,6 +360,8 @@
 		6BF835682523674F007245F8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				185A60C9257398FC009DBA67 /* loginModel.swift */,
+				185A60CE2573990F009DBA67 /* otpModel.swift */,
 				6BF8358525236D84007245F8 /* AppVersionModel.swift */,
 				6BFE5DA025289AA2004EB9AA /* WelcomeVideoModel.swift */,
 				6BFE5DC32528B06F004EB9AA /* HomeModel.swift */,
@@ -334,6 +369,7 @@
 				6B237C5B252B02D90001081F /* LiveEventModel.swift */,
 				6BCDBA42252B228300D0DDBE /* GalleryImageModel.swift */,
 				6BCDBA47252B229700D0DDBE /* GalleryVideosModel.swift */,
+				1801039A2574EE9700227154 /* LikeandShareModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -341,6 +377,8 @@
 		6BF8356925236756007245F8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				185A60D625739928009DBA67 /* loginService.swift */,
+				185A60D425739927009DBA67 /* otpService.swift */,
 				6BFE5DA525289DC6004EB9AA /* WelcomeVideoServices.swift */,
 				6BFE5DC82528B0A4004EB9AA /* HomeServices.swift */,
 				6BA45D9E2529FD4D00CB928B /* HomePageDetailServices.swift */,
@@ -348,6 +386,7 @@
 				6BCDBA4C252B230900D0DDBE /* GalleryServices.swift */,
 				6BF8EFB0252B471000E4908B /* ImageAllService.swift */,
 				6BF8EFB5252B471E00E4908B /* VideoAllService.swift */,
+				1801039F2574EEF300227154 /* LikeandShareService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -355,6 +394,8 @@
 		6BF8356B25236768007245F8 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				185A60D325739927009DBA67 /* loginPresenter.swift */,
+				185A60D525739927009DBA67 /* otpPresenter.swift */,
 				6BFE5DAA25289DDF004EB9AA /* WelcomeVideoPresenter.swift */,
 				6BFE5DCD2528B0BE004EB9AA /* HomePresenter.swift */,
 				6BA45DA32529FD6B00CB928B /* HomePageDetailPresenter.swift */,
@@ -362,6 +403,7 @@
 				6BCDBA51252B238900D0DDBE /* GalleryPresenter.swift */,
 				6BF8EFB7252B472B00E4908B /* ImageAllPresenter.swift */,
 				6BF8EFBC252B473A00E4908B /* VideoAllPresnter.swift */,
+				180103A42574EFA900227154 /* LikeandSharePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -375,6 +417,7 @@
 				6B8B05ED2525E56000EE03C4 /* NavigationBarTitleOnLeftSide.swift */,
 				6BA45DA8252A142C00CB928B /* DateFormatter.swift */,
 				6BC86DAA252C56A2000A831F /* HTMLToString.swift */,
+				185A60FA2573A44D009DBA67 /* userDefault.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -382,6 +425,8 @@
 		6BF8356D25236787007245F8 /* Vc */ = {
 			isa = PBXGroup;
 			children = (
+				185A60E125739A58009DBA67 /* login.swift */,
+				185A60F02573A255009DBA67 /* otp.swift */,
 				6BF834F2252338F3007245F8 /* ViewController.swift */,
 				6B8B05DB2525DF9800EE03C4 /* TabbarController.swift */,
 				6BA2FFD525260F97007D4DF4 /* WelcomeVc.swift */,
@@ -618,6 +663,7 @@
 				6BF8358625236D84007245F8 /* AppVersionModel.swift in Sources */,
 				6BCDBA43252B228300D0DDBE /* GalleryImageModel.swift in Sources */,
 				6BCDBA52252B238900D0DDBE /* GalleryPresenter.swift in Sources */,
+				185A60E225739A58009DBA67 /* login.swift in Sources */,
 				6BFE5DAB25289DDF004EB9AA /* WelcomeVideoPresenter.swift in Sources */,
 				6BA45D9F2529FD4D00CB928B /* HomePageDetailServices.swift in Sources */,
 				6BFE5DCE2528B0BE004EB9AA /* HomePresenter.swift in Sources */,
@@ -632,10 +678,14 @@
 				6BF8EFB6252B471E00E4908B /* VideoAllService.swift in Sources */,
 				6B237C61252B03A20001081F /* LiveEventServices.swift in Sources */,
 				6BF8EFAC252B445100E4908B /* VideoAll.swift in Sources */,
+				185A60D725739928009DBA67 /* loginPresenter.swift in Sources */,
 				6BA45D882529CF3C00CB928B /* ChooseLanguage.swift in Sources */,
+				185A60FB2573A44D009DBA67 /* userDefault.swift in Sources */,
+				180103A52574EFA900227154 /* LikeandSharePresenter.swift in Sources */,
 				6B7E4D21252C961A00815F35 /* Search.swift in Sources */,
 				6B237C57252AFE400001081F /* LiveEventsCell.swift in Sources */,
 				6B237C73252B0F600001081F /* ImageCollectionViewCell.swift in Sources */,
+				185A60DA25739928009DBA67 /* loginService.swift in Sources */,
 				6BF8358125236B04007245F8 /* APIManager.swift in Sources */,
 				6BF8357125236811007245F8 /* APIURL.swift in Sources */,
 				6B7E4D1C252C8ECB00815F35 /* Social.swift in Sources */,
@@ -644,7 +694,11 @@
 				6BFE5DB02528A0D8004EB9AA /* AlertController.swift in Sources */,
 				6BA45D832529CD5100CB928B /* LocalizationSystem.swift in Sources */,
 				6BFE5DBA2528A46A004EB9AA /* Home.swift in Sources */,
+				180103A02574EEF300227154 /* LikeandShareService.swift in Sources */,
+				185A60F62573A409009DBA67 /* BottomBorder.swift in Sources */,
 				6B8B05EE2525E56000EE03C4 /* NavigationBarTitleOnLeftSide.swift in Sources */,
+				185A60CF2573990F009DBA67 /* otpModel.swift in Sources */,
+				185A60E72573A200009DBA67 /* constants.swift in Sources */,
 				6B237C66252B03BA0001081F /* LiveEventPresenter.swift in Sources */,
 				6BF8EFBD252B473A00E4908B /* VideoAllPresnter.swift in Sources */,
 				6BFE5DA125289AA3004EB9AA /* WelcomeVideoModel.swift in Sources */,
@@ -654,7 +708,11 @@
 				6BF834EF252338F3007245F8 /* AppDelegate.swift in Sources */,
 				6BA2FFD625260F97007D4DF4 /* WelcomeVc.swift in Sources */,
 				6BFE5DBF2528A483004EB9AA /* HomeCell.swift in Sources */,
+				185A60D925739928009DBA67 /* otpPresenter.swift in Sources */,
 				6BF8357925236930007245F8 /* APIFunctionName.swift in Sources */,
+				185A60D825739928009DBA67 /* otpService.swift in Sources */,
+				185A60F12573A255009DBA67 /* otp.swift in Sources */,
+				1801039B2574EE9700227154 /* LikeandShareModel.swift in Sources */,
 				6B8B05DC2525DF9900EE03C4 /* TabbarController.swift in Sources */,
 				6BA45D952529F96800CB928B /* ImageSliderCell.swift in Sources */,
 				6BCDBA48252B229700D0DDBE /* GalleryVideosModel.swift in Sources */,
@@ -666,6 +724,8 @@
 				6BFE5DB52528A0ED004EB9AA /* ActivityIndicator.swift in Sources */,
 				6B237C78252B0F730001081F /* VideoCollectionViewCell.swift in Sources */,
 				6BF834F1252338F3007245F8 /* SceneDelegate.swift in Sources */,
+				185A60EC2573A225009DBA67 /* Reachability.swift in Sources */,
+				185A60CA257398FC009DBA67 /* loginModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

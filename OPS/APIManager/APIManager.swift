@@ -280,15 +280,14 @@ class APIManager: NSObject {
               failureCallback?(responseObject["status"].string!)
               return
         }
-            
         if let responseDict = responseObject["image_result"].arrayObject
         {
-                let toModel = responseDict as! [[String:AnyObject]]
+               let toModel = responseDict as! [[String:AnyObject]]
                 // Create object
-                var data = [GalleryImageModel]()
-                for item in toModel {
-                    let single = GalleryImageModel.build(item)
-                    data.append(single)
+               var data = [GalleryImageModel]()
+               for item in toModel {
+                   let single = GalleryImageModel.build(item)
+                   data.append(single)
                 }
                 // Fire callback
                 successCallback?(data)
@@ -330,6 +329,144 @@ class APIManager: NSObject {
         } else {
             failureCallback?("An error has occured.")
         }
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+      )
+    }
+    
+    func callAPILogin(mobile_no:String,onSuccess successCallback: ((_ login: LoginModel) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.loginUrl
+        // Set Parameters
+        let parameters: Parameters =  ["mobile_number": mobile_no]
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+          
+        guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+              failureCallback?(responseObject["msg"].string!)
+              return
+         }
+            
+            let mobile_otp =  responseObject["otp"].string
+            let message =  responseObject["msg"].string
+            let status =  responseObject["status"].string
+
+            let sendToModel = LoginModel()
+            sendToModel.mobile_otp = mobile_otp
+            sendToModel.msg = message
+            sendToModel.status = status
+
+            successCallback?(sendToModel)
+            
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+      )
+    }
+    
+    func callAPIOTP(mobile_no:String, otp:String, onSuccess successCallback: ((_ otp: OTPModel) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+           // Build URL
+           let url = APIURL.url + APIFunctionName.otpUrl
+           // Set Parameters
+           let parameters: Parameters =  ["mobile_number": mobile_no, "otp": otp,  "device_token":"abcd" , "device_type": Globals.device_type]
+           // call API
+           self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+           // Create dictionary
+           print(responseObject)
+           guard let msg = responseObject["msg"].string, msg == "Login Successfully" else{
+                 failureCallback?(responseObject["msg"].string!)
+                 return
+           }
+            
+            //let message =  responseObject["userData"]["msg"].string
+            let status =  responseObject["status"].string
+            
+            if status == "Success"
+            {
+                let phone_number =  responseObject["userData"]["phone_number"].string
+                let full_name =  responseObject["userData"]["full_name"].string
+                let profile_pic =  responseObject["userData"]["profile_pic"].string
+                let user_id =  responseObject["userData"]["user_id"].string
+                let language_id =  responseObject["userData"]["language_id"].string
+
+                let sendToModel = OTPModel()
+                sendToModel.full_name = full_name
+                sendToModel.user_id = user_id
+                sendToModel.phone_number = phone_number
+                sendToModel.language_id = language_id
+                sendToModel.profile_pic = profile_pic
+                
+                successCallback?(sendToModel)
+            }
+            else
+            {
+                failureCallback?("An error has occured.")
+            }
+
+                              
+//           if let responseDict = responseObject["userData"].arrayObject
+//            {
+//                let otpModel = responseDict as! [[String:AnyObject]]
+//                // Create object
+//                var data = [OTPModel]()
+//                for item in otpModel {
+//                    let single = OTPModel.build(item)
+//                    data.append(single)
+//                }
+//                   // Fire callback
+//                successCallback?(data)
+//              }else {
+//                   failureCallback?("An error has occured.")
+//               }
+           },
+           onFailure: {(errorMessage: String) -> Void in
+               failureCallback?(errorMessage)
+           }
+         )
+    }
+    
+    func callAPILikeAndShare(from:String,user_id:String,newsfeed_id:String,onSuccess successCallback: ((_ res: LikeandShareModel) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        var url = String()
+        var parameters : Parameters
+        if from == "updateShare"{
+            url = APIURL.url + APIFunctionName.updateShareUrl
+            parameters =  ["newsfeed_id": newsfeed_id]
+        }
+        else if from == "updateLike"
+        {
+            url = APIURL.url + APIFunctionName.addLikeUrl
+            parameters =  ["newsfeed_id": newsfeed_id,"user_id": user_id]
+        }
+        else
+        {
+            url = APIURL.url + APIFunctionName.updateLikeUrl
+            parameters =  ["newsfeed_id": newsfeed_id,"user_id": user_id]
+        }
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+          
+        guard let msg = responseObject["msg"].string, msg == "OTP Generated" else{
+              failureCallback?(responseObject["msg"].string!)
+              return
+         }
+            
+            let message =  responseObject["msg"].string
+            let status =  responseObject["status"].string
+
+            let sendToModel = LikeandShareModel()
+            sendToModel.msg = message
+            sendToModel.status = status
+
+            successCallback?(sendToModel)
+            
         },
         onFailure: {(errorMessage: String) -> Void in
             failureCallback?(errorMessage)

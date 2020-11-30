@@ -16,7 +16,7 @@ class Home: UIViewController {
     /*Get welcome video Url*/
     let presenter = HomePresenter(homeServices: HomeServices())
     var resp = [HomeData]()
-    
+    var user_id = String()
     var videoUrl =  [String]()
     var dateArr =  [String]()
     var title_en =  [String]()
@@ -41,8 +41,12 @@ class Home: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: "1", nf_category_id: "2", search_text: "No", offset: "0", rowcount: "50")
-        self.performSegue(withIdentifier: "pop", sender: self)
+        self.callAPI(user_id: self.user_id, nf_category_id: "2", search_text: "No", offset: "0", rowcount: "50")
+        let value = UserDefaults.standard.object(forKey: "welcomeViedoKey") ?? ""
+        if value as! String == "yes"
+        {
+            self.performSegue(withIdentifier: "pop", sender: self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +77,9 @@ class Home: UIViewController {
             vc.descp = self.descp
             vc.fromView = "home"
 
+        }
+        else if segue.identifier == "pop" {
+            let _ = segue.destination as! WelcomeVc
         }
     }
     
@@ -173,7 +180,7 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement
             {
                 let lE = lastElement + 1
-                self.callAPI(user_id: "1", nf_category_id: "2", search_text: "No", offset: String(lE), rowcount: "5")
+                self.callAPI(user_id: self.user_id, nf_category_id: "2", search_text: "No", offset: String(lE), rowcount: "5")
 
             }
         }

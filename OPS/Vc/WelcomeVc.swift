@@ -11,7 +11,7 @@ import YoutubePlayer_in_WKWebView
 class WelcomeVc: UIViewController {
 
     @IBOutlet weak var playerView: WKYTPlayerView!
-    
+    let home = Home()
     /*Get welcome video Url*/
     let presenter = WelcomeVideoPresenter(welcomeVideoServices: WelcomeVideoServices())
     var resp = [VideoData]()
@@ -35,6 +35,7 @@ class WelcomeVc: UIViewController {
     }
     
     @IBAction func close(_ sender: Any) {
+        UserDefaults.standard.setValue("no", forKey: "welcomeViedoKey")
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -67,6 +68,7 @@ extension WelcomeVc: VideoView
             videoUrl = item.video_url ?? ""
         }
         loadWelcomeVideo(url: videoUrl)
+        UserDefaults.standard.setValue("yes", forKey: "welcomeViedoKey")
     }
     
     func setEmpty(errorMessage: String) {
