@@ -15,7 +15,7 @@ class Social: UIViewController,WKNavigationDelegate {
     
     var segmentedControl = HMSegmentedControl()
     var socialMedia = [String]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xkk-HV-9c8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xkk-HV-9c8">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,7 +28,7 @@
         <!--Navigation Controller-->
         <scene sceneID="f4E-5X-XgV">
             <objects>
-                <navigationController modalPresentationStyle="fullScreen" id="Xkk-HV-9c8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="nav" modalPresentationStyle="fullScreen" id="Xkk-HV-9c8" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zLw-bI-SU7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d4a-Hw-gkb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -337,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVb-pJ-M57" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="502.89855072463774" y="923.4375"/>
+            <point key="canvasLocation" x="591" y="982"/>
         </scene>
         <!--Image All-->
         <scene sceneID="96d-fX-a5x">
@@ -957,7 +957,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Du-OJ-t4a">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="781"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yox-i1-MjM">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
@@ -1003,7 +1003,7 @@
                                                 </connections>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-jx-suD">
-                                                <rect key="frame" x="0.0" y="238" width="414" height="639"/>
+                                                <rect key="frame" x="0.0" y="238" width="414" height="557"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Independence Day rehearsals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suE-9F-Jnd">
                                                         <rect key="frame" x="24" y="19" width="366" height="21"/>
@@ -1069,7 +1069,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3j-fR-MAv">
-                                                        <rect key="frame" x="24" y="157" width="366" height="309.5"/>
+                                                        <rect key="frame" x="24" y="157" width="366" height="227.5"/>
                                                         <string key="text">As per the modifications, the stretch of Kamarajar Salai from Napier Bridge up to RBI subway north on Rajaji Salai and Flag Staff Salai will be closed for traffic. Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via Rajaji Salai may have to take the route via Swami Sivananda Salai, Anna Salai, Muthusamy Bridge, Muthusamy Salai, R A Mandram and North Fort Salai to reach the destination. Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via Rajaji Salai may have to take the route via Swami Sivananda Salai, Anna Salai, Muthusamy Bridge, Muthusamy Salai, R A Mandram and North Fort Salai to reach the destination. Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via</string>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2161,7 +2161,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tKG-tZ-8XK"/>
+        <segue reference="GDh-g7-8aI"/>
         <segue reference="MEc-R0-D4b"/>
     </inferredMetricsTieBreakers>
     <resources>

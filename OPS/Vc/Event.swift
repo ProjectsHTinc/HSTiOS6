@@ -14,7 +14,7 @@ class Event: UIViewController {
     /*Get welcome video Url*/
     let presenter = HomePresenter(homeServices: HomeServices())
     var resp = [HomeData]()
-    
+    var user_id = String()
     var videoUrl =  [String]()
     var dateArr =  [String]()
     var title_en =  [String]()
@@ -39,7 +39,7 @@ class Event: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: "1", nf_category_id: "3", offset: "0", rowcount: "5")
+        self.callAPI(user_id: self.user_id, nf_category_id: "3", offset: "0", rowcount: "5")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -176,7 +176,7 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement
             {
                 let lE = lastElement + 1
-                self.callAPI(user_id: "1", nf_category_id: "2", offset: String(lE), rowcount: "5")
+                self.callAPI(user_id: self.user_id, nf_category_id: "2", offset: String(lE), rowcount: "5")
 
             }
         }
