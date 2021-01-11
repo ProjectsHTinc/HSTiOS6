@@ -17,6 +17,7 @@ class HomePageDetail: UIViewController {
     @IBOutlet weak var shareOutlet: UIButton!
     @IBOutlet weak var descripLabel: UILabel!
     @IBOutlet weak var descrip: UILabel!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     var index = 0
     var inForwardDirection = true
@@ -41,16 +42,37 @@ class HomePageDetail: UIViewController {
         // Do any additional setup after loading the view.
         self.callAPI()
         self.updateDetails()
+//        self.navigationController?.navigationBar.barTintColor = UIColor.clear
+       
+//        let gradientLayer = CAGradientLayer()
+//        let layerY = -UIApplication.shared.statusBarFrame.size.height as CGFloat
+//        let layerHeight = (self.navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height as CGFloat
+//        gradientLayer.frame = CGRect(x: 0, y: layerY, width: 1366, height: layerHeight)
+//        gradientLayer.colors = [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 8.0).cgColor, UIColor(red: 6/255.0, green: 74/255.0, blue: 17/255.0, alpha: 0.6).cgColor]
+//        self.navigationController?.navigationBar.layer.addSublayer(gradientLayer)
+//        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .white
+//        let navigationBar = navigationController!.navigationBar
+//        navigationBar.tintColor = UIColor.white
+       
+//                                                                                                                                                                          UINavigationBar.appearance().tintColor = UIColor.white
+
+//        if let navigationbar = self.navigationController?.navigationBar {
+//            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
+//        }
     }
-    
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+
+        if parent == nil {
+            debugPrint("Back Button pressed.")
+        }
+    }
     
     func callAPI()
     {
         presenter.attachView(view: self)
         presenter.getHomeDetailResp(user_id: "1", newsfeed_id: newsfeed_id)
     }
-    
-
     
     func updateDetails() {
         if fromView == "imageAll"
@@ -125,6 +147,7 @@ class HomePageDetail: UIViewController {
     */
 
 }
+
 extension HomePageDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HomePageDetailView
 {
     func startLoading() {
@@ -170,5 +193,10 @@ extension HomePageDetail : UICollectionViewDelegate, UICollectionViewDataSource,
         return UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
     }
     
-    
 }
+//let gradientLayer = CAGradientLayer()
+//let layerY = -UIApplication.shared.statusBarFrame.size.height as CGFloat
+//let layerHeight = (self.navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height as CGFloat
+//gradientLayer.frame = CGRect(x: 0, y: layerY, width: 1366, height: layerHeight)
+//gradientLayer.colors = [UIColor(red: 16/255.0, green: 57/255.0, blue: 82/255.0, alpha: 1.0).cgColor, UIColor(red: 17/255.0, green: 132/255.0, blue: 157/255.0, alpha: 1.0).cgColor]
+//self.navigationController?.navigationBar.layer.addSublayer(gradientLayer)

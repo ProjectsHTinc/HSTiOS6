@@ -13,4 +13,3 @@ struct  APIURL {
     static let domain = "apiios/"
     static let url = BaseUrl_Dev + domain
 }
-

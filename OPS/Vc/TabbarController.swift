@@ -19,16 +19,27 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
 
         // Do any additional setup after loading the view.
         /*Tabbar border width*/
+//        
         tabBar.layer.borderWidth = 1
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
         tabBar.clipsToBounds = true
         navTitleOnLeftSide ()
         setupMiddleButton ()
         searchBar ()
-
+  
     }
     
-
+    override func viewDidAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = true
+//        if let navigationbar = self.navigationController?.navigationBar {
+//            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
+//        }
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .white
+//        let navigationBar = navigationController!.navigationBar
+//        navigationBar.tintColor = UIColor.white
+//
+    }
+    
     func searchBar()
     {
         
@@ -36,7 +47,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         searchController.delegate = self
         let searchBar = searchController.searchBar
         searchBar.tintColor = UIColor.white
-        searchBar.barTintColor = UIColor.white
+        searchBar.barTintColor = UIColor.green
         searchController.searchBar.delegate = self
 
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
@@ -82,6 +93,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         //menuButton.backgroundColor = UIColor.green
         self.view.addSubview(menuButton)
         self.view.layoutIfNeeded()
+        menuButton.addTarget(self, action: #selector(menuButtonAction), for: UIControl.Event.touchUpInside)
 
     }
 
@@ -89,12 +101,13 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
     @objc func menuButtonAction(sender: UIButton) {
         self.selectedIndex = 2
         // console print to verify the button works
+//        self.performSegue(withIdentifier: "to_OPS", sender: self)
         print("Middle Button was just pressed!")
        }
     
     func searchBarSearchButtonClicked( _ searchBar: UISearchBar)
     {
-        self.performSegue(withIdentifier: "to_Search", sender: searchBar.text)
+       
         self.searchController.isActive = false
     }
     
@@ -122,8 +135,13 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
             let vc = segue.destination as! Search
             vc.keyword = sender as! String
         }
-    }
+        if (segue.identifier == "to_OPS")
+        {
+            let vc = segue.destination as! ViewController
+            
+        }
     
+    }
 
 }
 
@@ -198,4 +216,6 @@ extension UINavigationBar {
         }
         gradientView.set(colors: colors, startPoint: startPoint, endPoint: endPoint, locations: locations)
     }
+    
+    
 }

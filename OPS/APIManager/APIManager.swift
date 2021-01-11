@@ -473,4 +473,178 @@ class APIManager: NSObject {
         }
       )
     }
+    
+    func callAPIBiography(user_id:String, onSuccess successCallback: ((_ resp: [BiographyModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.biographyUrl
+        // Set Parameters
+        let parameters: Parameters =  ["user_id":user_id]
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+        guard let status = responseObject["status"].string, status == "Success" else{
+              failureCallback?(responseObject["status"].string!)
+              return
+        }
+            
+        if let responseDict = responseObject["biogrphy_result"].arrayObject
+        {
+                let toModel = responseDict as! [[String:AnyObject]]
+                // Create object
+                var data = [BiographyModel]()
+                for item in toModel {
+                    let single = BiographyModel.build(item)
+                    data.append(single)
+                }
+                // Fire callback
+                successCallback?(data)
+        } else {
+            failureCallback?("An error has occured.")
+        }
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+      )
+    }
+    
+    func callAPIAchievements(user_id:String, onSuccess successCallback: ((_ resp: [AchievementsModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.achievementsUrl
+        // Set Parameters
+        let parameters: Parameters =  ["user_id":user_id]
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+        guard let status = responseObject["status"].string, status == "Success" else{
+              failureCallback?(responseObject["status"].string!)
+              return
+        }
+            
+        if let responseDict = responseObject["achievement_result"].arrayObject
+        {
+                let toModel = responseDict as! [[String:AnyObject]]
+                // Create object
+                var data = [AchievementsModel]()
+                for item in toModel {
+                    let single = AchievementsModel.build(item)
+                    data.append(single)
+                }
+                // Fire callback
+                successCallback?(data)
+        } else {
+            failureCallback?("An error has occured.")
+        }
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+      )
+    }
+    func callAPIAboutParty(user_id:String, onSuccess successCallback: ((_ resp: [AboutPartyModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.aboutPartyUrl
+        // Set Parameters
+        let parameters: Parameters =  ["user_id":user_id]
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+        guard let status = responseObject["status"].string, status == "Success" else{
+              failureCallback?(responseObject["status"].string!)
+              return
+        }
+            
+        if let responseDict = responseObject["party_result"].arrayObject
+        {
+                let toModel = responseDict as! [[String:AnyObject]]
+                // Create object
+                var data = [AboutPartyModel]()
+                for item in toModel {
+                    let single = AboutPartyModel.build(item)
+                    data.append(single)
+                }
+                // Fire callback
+                successCallback?(data)
+        } else {
+            failureCallback?("An error has occured.")
+        }
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+      )
+    }
+    
+    func callAPIPartyState(user_id:String, onSuccess successCallback: ((_ resp: [PartyStateModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.partyStatesUrl
+        // Set Parameters
+        let parameters: Parameters =  ["user_id":user_id]
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+        guard let status = responseObject["status"].string, status == "Success" else{
+              failureCallback?(responseObject["status"].string!)
+              return
+        }
+            
+        if let responseDict = responseObject["state_result"].arrayObject
+        {
+                let toModel = responseDict as! [[String:AnyObject]]
+                // Create object
+                var data = [PartyStateModel]()
+                for item in toModel {
+                    let single = PartyStateModel.build(item)
+                    data.append(single)
+                }
+                // Fire callback
+                successCallback?(data)
+        } else {
+            failureCallback?("An error has occured.")
+        }
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+      )
+    }
+    
+    func callAPIElectionDetail(state_id:String, onSuccess successCallback: ((_ resp: [ElectionDetailModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.partyElectionsUrl
+        // Set Parameters
+        let parameters: Parameters =  ["state_id":state_id]
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+        guard let status = responseObject["status"].string, status == "Success" else{
+              failureCallback?(responseObject["status"].string!)
+              return
+        }
+            
+        if let responseDict = responseObject["MLA_result"].arrayObject
+        {
+                let toModel = responseDict as! [[String:AnyObject]]
+                // Create object
+                var data = [ElectionDetailModel]()
+                for item in toModel {
+                    let single = ElectionDetailModel.build(item)
+                    data.append(single)
+                }
+                // Fire callback
+                successCallback?(data)
+        } else {
+            failureCallback?("An error has occured.")
+        }
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+      )
+    }
 }

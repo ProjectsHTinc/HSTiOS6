@@ -8,6 +8,7 @@
 import UIKit
 
 struct APIFunctionName {
+    
     static let loginUrl = "generate_otp/"
     static let otpUrl = "login/"
     static let resendUrl = "resend_otp/"
@@ -23,4 +24,10 @@ struct APIFunctionName {
     static let updateShareUrl = "update_share_count/"
     static let addLikeUrl = "add_like_count/"
     static let updateLikeUrl = "update_like_count/"
+    static let biographyUrl = "ops_biogrphy/"
+    static let achievementsUrl = "ops_achievements/"
+    static let aboutPartyUrl = "about_party/"
+    static let partyStatesUrl = "party_states/"
+    static let partyElectionsUrl = "party_elections/"
 }
+
