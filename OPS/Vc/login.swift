@@ -21,10 +21,14 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
         print ("test12345678")
         // Do any additional setup after loading the view.
          self.hideKeyboardWhenTappedAround()
-         //view.bindToKeyboard()
+         view.bindToKeyboard()
          //activityView.isHidden = true
          phoneNum.attributedPlaceholder = NSAttributedString(string: "Enter Your Mobile Number", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLayoutSubviews(){
@@ -45,7 +49,6 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
          let mobile_otp = login_otp
          self.performSegue(withIdentifier: "to_OTP", sender: mobile_otp)
     }
-    
     func setEmptyLogin(errorMessage: String) {
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: errorMessage, complition: {
         })
@@ -64,37 +67,38 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
     {
            DispatchQueue.main.async {
                // Run UI Updates or call completion block
-               self.presenter.attachView(view: self)
-               self.presenter.getOtp(mobile_no: self.phoneNum.text!)
-           }
-    }
-    
-    func CheckValuesAreEmpty () -> Bool{
-        
-        guard Reachability.isConnectedToNetwork() == true else {
-              AlertController.shared.offlineAlert(targetVc: self, complition: {
-                //Custom action code
-             })
-             return false
+            self.presenter.attachView(view: self)
+            self.presenter.getOtp(mobile_no: self.phoneNum.text!)
         }
-        
-        guard self.phoneNum.text?.count != 0  else {
-            AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: Globals.LoginAlertMessage, complition: {
-                
-              })
-             return false
-         }
-            
-          return true
-    }
+ }
+ 
+ func CheckValuesAreEmpty () -> Bool{
+     
+     guard Reachability.isConnectedToNetwork() == true else {
+           AlertController.shared.offlineAlert(targetVc: self, complition: {
+             //Custom action code
+          })
+          return false
+     }
+     
+     guard self.phoneNum.text?.count != 0  else {
+         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: Globals.LoginAlertMessage, complition: {
+             
+           })
+          return false
+      }
+         
+       return true
+ }
+ 
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ if (segue.identifier == "to_OTP"){
+    let vc = segue.destination as! otp
+    vc.otp = sender as! String
+    vc.mobileNumber = self.phoneNum.text!
+  }
+ }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // Get the new view controller using segue.destination.
-    // Pass the selected object to the new view controller.
-    if (segue.identifier == "to_OTP"){
-       let vc = segue.destination as! otp
-       vc.otp = sender as! String
-       vc.mobileNumber = self.phoneNum.text!
-    }
-    }
 }

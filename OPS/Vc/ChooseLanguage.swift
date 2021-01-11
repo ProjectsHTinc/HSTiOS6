@@ -12,6 +12,7 @@ class ChooseLanguage: UIViewController {
     var engisSelected = false
     var tamisSelected = false
     var selectedlanguage = String()
+    
     @IBOutlet weak var englishSelected: UIImageView!
     @IBOutlet weak var tamilSelected: UIImageView!
     

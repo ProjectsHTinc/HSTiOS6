@@ -19,5 +19,6 @@ extension UIViewController
 
             let leftItem = UIBarButtonItem(customView: longTitleLabel)
             self.navigationItem.leftBarButtonItem = leftItem
+//            self.navigationItem.backGroundColor = UIColor.red
     }
 }

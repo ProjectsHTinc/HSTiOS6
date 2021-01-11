@@ -119,8 +119,8 @@ class Gallery: UITableViewController {
             vc.nf_cover_image = self.nf_cover_image
             vc.eventTitle = self.eventTitle
             vc.date = self.date
-            vc.likesCount = self.likesCnt
-            vc.shareCount = self.shareCnt
+//            vc.likesCount = self.likesCnt
+//            vc.shareCount = self.shareCnt
             //vc.descp = self.descp
             vc.fromView = "imageAll"
         }
@@ -129,8 +129,8 @@ class Gallery: UITableViewController {
             let vc = segue.destination as! VideoDetail
             vc.eventName = self.eventTitle
             vc.date = self.date
-            vc.likeCount = self.likesCnt
-            vc.shareCount = self.shareCnt
+//            vc.likeCount = self.likesCnt
+//            vc.shareCount = self.shareCnt
             vc.videoId = self.videoId
         }
     }
@@ -168,8 +168,8 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 cell.imageTitle.text = resp.title_ta
 
             }
-            cell.imageLikeOutlet.tag = indexPath.row
-            cell.imageLikeOutlet.addTarget(self, action: #selector(likeButtonImageClicked), for: .touchUpInside)
+//            cell.imageLikeOutlet.tag = indexPath.row
+//            cell.imageLikeOutlet.addTarget(self, action: #selector(likeButtonImageClicked), for: .touchUpInside)
             cell.shadowDecorate()
             return cell
 
@@ -190,21 +190,21 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 cell.videoTitle.text = resp.title_ta
 
             }
-            cell.videoLikeOutlet.tag = indexPath.row
-            cell.videoLikeOutlet.addTarget(self, action: #selector(likeButtonVideoClicked), for: .touchUpInside)
+//            cell.videoLikeOutlet.tag = indexPath.row
+//            cell.videoLikeOutlet.addTarget(self, action: #selector(likeButtonVideoClicked), for: .touchUpInside)
             cell.shadowDecorate()
             return cell
         }
         
     }
     
-    @objc func likeButtonImageClicked() {
-
-    }
-    
-    @objc func likeButtonVideoClicked() {
-
-    }
+//    @objc func likeButtonImageClicked() {
+//
+//    }
+//
+//    @objc func likeButtonVideoClicked() {
+//
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -220,8 +220,8 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 self.eventTitle = res.title_ta!
             }
             self.date = res.news_date!
-            self.likesCnt = res.likes_count!
-            self.shareCnt = res.share_count!
+//            self.likesCnt = res.likes_count!
+//            self.shareCnt = res.share_count!
             self.newsfeed_id = res.newsfeed_id!
             self.nf_cover_image = res.nf_cover_image!
             self.performSegue(withIdentifier: "to_detail", sender: self)
@@ -238,8 +238,8 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 self.eventTitle = res.title_ta!
             }
             self.date = res.news_date!
-            self.likesCnt = res.likes_count!
-            self.shareCnt = res.share_count!
+//            self.likesCnt = res.likes_count!
+//            self.shareCnt = res.share_count!
             self.videoId = res.nf_video_token_id!
             self.performSegue(withIdentifier: "to_videoDetail", sender: self)
         }

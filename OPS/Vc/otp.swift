@@ -37,7 +37,7 @@ class otp: UIViewController,UITextFieldDelegate,LoginView {
         // Do any additional setup after loading the view.
         //activityView.isHidden = true
         self.hideKeyboardWhenTappedAround()
-        //view.bindToKeyboard()
+        view.bindToKeyboard()
         self.setTextfieldDelegates()
 //        self.textfield1.addBottomBorder()
 //        self.textfield2.addBottomBorder()

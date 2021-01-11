@@ -16,6 +16,7 @@ import UIKit
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -35,8 +36,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if user_id as! String == ""
         {
             guard let window = self.window else { return }
-            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "login") as! login
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+            let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "nav") as! login
             window.rootViewController = newViewcontroller
             window.makeKeyAndVisible()
         }

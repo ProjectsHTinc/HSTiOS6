@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FIx-zj-B8u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FIx-zj-B8u">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -132,9 +132,9 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="as6-Jb-jUT">
-                                        <rect key="frame" x="188" y="487" width="38" height="25"/>
+                                        <rect key="frame" x="188" y="484" width="38" height="21"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="PTZ-bl-XQh"/>
+                                            <constraint firstAttribute="height" constant="21" id="PTZ-bl-XQh"/>
                                             <constraint firstAttribute="width" constant="38" id="fsE-Ma-29v"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
@@ -142,9 +142,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jt-ut-A7e">
-                                        <rect key="frame" x="54" y="532" width="307" height="30"/>
+                                        <rect key="frame" x="54" y="521" width="307" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="dd6-EA-UEN"/>
+                                            <constraint firstAttribute="height" constant="25" id="dd6-EA-UEN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="14"/>
                                         <state key="normal" title="Continue as Guest">
@@ -162,12 +162,12 @@
                                     <constraint firstItem="mgH-vL-BU0" firstAttribute="leading" secondItem="OW6-ha-a83" secondAttribute="leading" constant="20" symbolic="YES" id="HPp-bV-iKt"/>
                                     <constraint firstItem="bBu-ME-sPT" firstAttribute="top" secondItem="xwv-Ag-Ko2" secondAttribute="bottom" constant="32" id="IVk-ae-zse"/>
                                     <constraint firstAttribute="trailing" secondItem="BqF-Sq-7Fk" secondAttribute="trailing" constant="20" symbolic="YES" id="Kgw-tO-Prm"/>
-                                    <constraint firstItem="as6-Jb-jUT" firstAttribute="top" secondItem="BqF-Sq-7Fk" secondAttribute="bottom" constant="20" id="UWU-B8-Km9"/>
+                                    <constraint firstItem="as6-Jb-jUT" firstAttribute="top" secondItem="BqF-Sq-7Fk" secondAttribute="bottom" constant="17" id="UWU-B8-Km9"/>
                                     <constraint firstAttribute="trailing" secondItem="mgH-vL-BU0" secondAttribute="trailing" constant="20" symbolic="YES" id="ZwS-rh-eXj"/>
                                     <constraint firstItem="BqF-Sq-7Fk" firstAttribute="leading" secondItem="OW6-ha-a83" secondAttribute="leading" constant="20" symbolic="YES" id="fG8-6h-2LA"/>
                                     <constraint firstItem="BqF-Sq-7Fk" firstAttribute="top" secondItem="mgH-vL-BU0" secondAttribute="bottom" constant="24" id="hNK-X7-INg"/>
                                     <constraint firstItem="as6-Jb-jUT" firstAttribute="centerX" secondItem="OW6-ha-a83" secondAttribute="centerX" id="sal-YP-DMy"/>
-                                    <constraint firstItem="3jt-ut-A7e" firstAttribute="top" secondItem="as6-Jb-jUT" secondAttribute="bottom" constant="20" id="uIg-E7-dzE"/>
+                                    <constraint firstItem="3jt-ut-A7e" firstAttribute="top" secondItem="as6-Jb-jUT" secondAttribute="bottom" constant="16" id="uIg-E7-dzE"/>
                                     <constraint firstItem="mgH-vL-BU0" firstAttribute="top" secondItem="bBu-ME-sPT" secondAttribute="bottom" constant="37" id="y2z-9X-xdD"/>
                                 </constraints>
                             </view>
@@ -203,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the 4 digit SMS verification code we sent to your mobile phone" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xH1-SK-5NU">
-                                <rect key="frame" x="72" y="112" width="270" height="76"/>
+                                <rect key="frame" x="72" y="152" width="270" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="R28-Lv-Xkb"/>
                                     <constraint firstAttribute="height" constant="76" id="d1C-dQ-QXS"/>
@@ -213,7 +213,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLY-ke-f08">
-                                <rect key="frame" x="170" y="309" width="74" height="18"/>
+                                <rect key="frame" x="170" y="349" width="74" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="9we-5l-27p"/>
                                     <constraint firstAttribute="width" constant="74" id="wi3-Ua-xdz"/>
@@ -223,7 +223,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fwa-m3-gG5">
-                                <rect key="frame" x="34.5" y="341" width="345" height="35"/>
+                                <rect key="frame" x="34.5" y="381" width="345" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pG9-qL-EaZ">
                                         <rect key="frame" x="222" y="2.5" width="84" height="30"/>
@@ -262,7 +262,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iH-U2-6TW">
-                                <rect key="frame" x="81" y="219" width="252" height="52"/>
+                                <rect key="frame" x="81" y="259" width="252" height="52"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="yow-Cq-s5a">
                                         <rect key="frame" x="23" y="9" width="206" height="34"/>
@@ -335,7 +335,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fg5-dt-e1n">
-                                <rect key="frame" x="20" y="390" width="374" height="54"/>
+                                <rect key="frame" x="20" y="430" width="374" height="54"/>
                                 <color key="backgroundColor" name="GreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="pDw-Pw-DTJ"/>
@@ -354,7 +354,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verify Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFg-Sh-3na">
-                                <rect key="frame" x="69" y="84" width="276" height="25"/>
+                                <rect key="frame" x="69" y="124" width="276" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="KRY-rY-PNe"/>
                                 </constraints>
@@ -378,7 +378,7 @@
                             <constraint firstItem="xH1-SK-5NU" firstAttribute="top" secondItem="oFg-Sh-3na" secondAttribute="bottom" constant="3" id="c14-5z-ldc"/>
                             <constraint firstItem="yLY-ke-f08" firstAttribute="centerX" secondItem="vpz-e4-WTh" secondAttribute="centerX" id="foN-Tn-AWp"/>
                             <constraint firstItem="pDl-Jd-1gX" firstAttribute="trailing" secondItem="oFg-Sh-3na" secondAttribute="trailing" constant="69" id="p6A-sd-TdY"/>
-                            <constraint firstItem="oFg-Sh-3na" firstAttribute="top" secondItem="pDl-Jd-1gX" secondAttribute="top" constant="40" id="vkE-zZ-EMb"/>
+                            <constraint firstItem="oFg-Sh-3na" firstAttribute="top" secondItem="pDl-Jd-1gX" secondAttribute="top" constant="80" id="vkE-zZ-EMb"/>
                             <constraint firstItem="Fwa-m3-gG5" firstAttribute="top" secondItem="yLY-ke-f08" secondAttribute="bottom" constant="14" id="yij-DM-Rik"/>
                         </constraints>
                     </view>
