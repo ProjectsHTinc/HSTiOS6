@@ -40,7 +40,7 @@ class Search: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: "1", nf_category_id: "2", search_text: keyword, offset: "0", rowcount: "5")
+        self.callAPI(user_id: GlobalVariables.shared.user_id, nf_category_id: "2", search_text: keyword, offset: "0", rowcount: "5")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +91,7 @@ extension Search: HomeView , UITableViewDelegate, UITableViewDataSource
             let url = items.nf_video_token_id
             let date = items.news_date
             let title_en = items.title_en
-            let title_ta = items.title_en
+            let title_ta = items.title_ta
             let decrip_en = items.description_en
             let decrip_ta = items.description_ta
 //            let likecount = items.likes_count
@@ -170,12 +170,12 @@ extension Search: HomeView , UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement
             {
                 let lE = lastElement + 1
-                self.callAPI(user_id: "1", nf_category_id: "2", search_text: keyword, offset: String(lE), rowcount: "5")
+                self.callAPI(user_id: GlobalVariables.shared.user_id, nf_category_id: "2", search_text: keyword, offset: String(lE), rowcount: "5")
 
             }
         }
     }
-        
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if LocalizationSystem.sharedInstance.getLanguage() == "en"
         {
@@ -196,7 +196,7 @@ extension Search: HomeView , UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320
+        return 272
     }
     
 }

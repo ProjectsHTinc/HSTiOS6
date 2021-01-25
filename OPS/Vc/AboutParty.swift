@@ -16,14 +16,18 @@ class AboutParty: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setUpSegmentedControll ()
     }
     
     @IBAction func segmentAction(_ sender: Any) {
         
-          if (sender as AnyObject).selectedSegmentIndex == 0 {
+          if (sender as AnyObject).selectedSegmentIndex == 0
+          {
             about.alpha  = 1
             acheievements.alpha   = 0
-         } else {
+          }
+          else
+          {
             about.alpha   = 0
             acheievements.alpha = 1
           }
@@ -33,9 +37,16 @@ class AboutParty: UIViewController {
         
         about.alpha  = 1
         acheievements.alpha = 0
-        segmentControl.setTitle("About", forSegmentAt: 0)
-        segmentControl.setTitle("Achievements", forSegmentAt: 1)
-        
+        if LocalizationSystem.sharedInstance.getLanguage() == "en"
+        {
+            segmentControl.setTitle("About", forSegmentAt: 0)
+            segmentControl.setTitle("Achievements", forSegmentAt: 1)
+        }
+        else
+        {
+            segmentControl.setTitle("ஓபிஎஸ் பற்றி", forSegmentAt: 0)
+            segmentControl.setTitle("சாதனைகள்", forSegmentAt: 1)
+        }
     }
     /*
     // MARK: - Navigation

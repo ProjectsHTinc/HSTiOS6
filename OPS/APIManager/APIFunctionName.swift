@@ -29,5 +29,8 @@ struct APIFunctionName {
     static let aboutPartyUrl = "about_party/"
     static let partyStatesUrl = "party_states/"
     static let partyElectionsUrl = "party_elections/"
+    static let profileUpdateUrl = "profile_update/"
+    static let profileDetailsUrl = "profile_details/"
 }
+
 

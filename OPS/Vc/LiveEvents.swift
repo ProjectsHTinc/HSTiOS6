@@ -27,7 +27,7 @@ class LiveEvents: UIViewController {
     func callAPI()
     {
         presenter.attachView(view: self)
-        presenter.getLiveEvents(user_id: "1")
+        presenter.getLiveEvents(user_id: GlobalVariables.shared.user_id)
     }
 
     /*

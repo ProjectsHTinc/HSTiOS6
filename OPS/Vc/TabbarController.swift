@@ -13,7 +13,8 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
     var menuButton = UIButton(frame: CGRect.zero)
     var searchController = UISearchController()
     var user_id = String()
-
+    
+//    var userDetails = [U]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,51 +27,59 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         navTitleOnLeftSide ()
         setupMiddleButton ()
         searchBar ()
-  
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0)
+        print("karan\(GlobalVariables.shared.user_id)")
+       
     }
-    
+     
     override func viewDidAppear(_ animated: Bool) {
-//        self.navigationController?.navigationBar.isHidden = true
-//        if let navigationbar = self.navigationController?.navigationBar {
-//            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
-//        }
-        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .white
-//        let navigationBar = navigationController!.navigationBar
-//        navigationBar.tintColor = UIColor.white
-//
+
+        print(user_id)
+        print("hshshsh123")
+        print(GlobalVariables.shared.user_id)
+        print("hdhuh")
     }
     
     func searchBar()
     {
-        
+       
         searchController = UISearchController(searchResultsController: nil)
         searchController.delegate = self
         let searchBar = searchController.searchBar
         searchBar.tintColor = UIColor.white
-        searchBar.barTintColor = UIColor.green
+       
+        searchBar.barTintColor = UIColor.white
         searchController.searchBar.delegate = self
 
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
             textfield.textColor = UIColor.blue
             if let backgroundview = textfield.subviews.first {
-
-                // Background color
+                //                                                                                                                                                       Background color
                 backgroundview.backgroundColor = UIColor.white
-
                 // Rounded corner
                 backgroundview.layer.cornerRadius = 10;
                 backgroundview.clipsToBounds = true;
-            }
         }
-
-
-        if let navigationbar = self.navigationController?.navigationBar {
-            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
-        }
+    }
         
-
+//        if let navigationbar = self.navigationController?.navigationBar {
+//            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
+//        }
+        
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    @IBAction func profileAction(_ sender: Any) {
+        
+        if GlobalVariables.shared.user_id == ""
+        {
+            self.performSegue(withIdentifier: "to_login", sender: self)
+        }
+        else
+        {
+            self.performSegue(withIdentifier: "to_settings", sender: self)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -123,7 +132,6 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
           }
     }
 
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -137,12 +145,17 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         }
         if (segue.identifier == "to_OPS")
         {
-            let vc = segue.destination as! ViewController
-            
+            _ = segue.destination as! ViewController
         }
-    
+        if (segue.identifier == "to_login")
+        {
+            _ = segue.destination as! login
+        }
+        if (segue.identifier == "to_settings")
+        {
+            _ = segue.destination as! AppSettings
+        }
     }
-
 }
 
 class UINavigationBarGradientView: UIView {

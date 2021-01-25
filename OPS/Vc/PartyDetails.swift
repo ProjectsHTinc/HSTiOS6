@@ -27,15 +27,15 @@ class PartyDetails: UIViewController,AboutPartyView {
     func callAPI() {
         
         presenter.attachView(view: self)  
-        presenter.getaboutParty(user_id: "1")
+        presenter.getaboutParty(user_id: GlobalVariables.shared.user_id)
     }
     
     func startLoading() {
-//
+        self.view.activityStartAnimating()
     }
     
     func finishLoading() {
-//
+        self.view.activityStopAnimating()
     }
     
     func setparty(aboutParty: [AboutPartyData]) {
@@ -46,10 +46,19 @@ class PartyDetails: UIViewController,AboutPartyView {
             
             self.partyTextTa.append(partyTa!)
             self.partyTextEn.append(partyEn!)
-         
-            self.partyTextView.text = partyTextEn
+            if LocalizationSystem.sharedInstance.getLanguage() == "en"
+            {
+            self.partyTextView.setHTMLFromString(text: partyTextEn)
+            self.partyTitleLbl.setHTMLFromString(text:"All India Anna Dravida Munnetra Kazhagam")
+            }
+            else
+            {
+            self.partyTextView.setHTMLFromString(text: partyTextTa)
+            self.partyTitleLbl.setHTMLFromString(text:"அகில இந்திய அண்ணா திராவிட முனேத்ரா கலகம்")
+            }
          }
     }
+    
     func setEmpty(errorMessage: String) {
         AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: errorMessage, complition: {
         })
