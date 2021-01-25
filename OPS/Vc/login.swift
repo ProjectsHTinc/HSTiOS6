@@ -13,8 +13,10 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
     
     @IBOutlet var backView: UIView!
     @IBOutlet var loginBtn: UIButton!
-    @IBOutlet var activityView: UIActivityIndicatorView!
+//    @IBOutlet var activityView: UIActivityIndicatorView!
     @IBOutlet var phoneNum: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +24,8 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
         // Do any additional setup after loading the view.
          self.hideKeyboardWhenTappedAround()
          view.bindToKeyboard()
-         //activityView.isHidden = true
          phoneNum.attributedPlaceholder = NSAttributedString(string: "Enter Your Mobile Number", attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,13 +37,13 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
 //        backView.addGradient(colors: [UIColor(red: 4.0 / 255.0, green: 105.0 / 255.0, blue: 215.0 / 255.0, alpha: 0.93), UIColor(red: 2.0 / 255.0, green: 53.0 / 255.0, blue: 108.0 / 255.0, alpha: 0.97)], locations: [0.1, 1.0])
        }
     func startLoading() {
-        //activityView.isHidden = true
-        //activityView.startAnimating()
+//        activityView.isHidden = true
+//        activityView.startAnimating()
     }
     
     func finishLoading() {
-        //activityView.isHidden = false
-        //activityView.stopAnimating()
+//        activityView.isHidden = false
+//        activityView.stopAnimating()
     }
     
     func setLoginOtp(login_otp: String) {

@@ -34,15 +34,15 @@ class PartyStateList: UIViewController,PartyStateView,UITableViewDelegate,UITabl
     
     func callAPI() {
         presenter.attachView(view: self)
-        presenter.getpartyState(user_id: "1")
+        presenter.getpartyState(user_id: GlobalVariables.shared.user_id)
     }
     
     func startLoading() {
-//
+        self.view.activityStartAnimating()
     }
     
     func finishLoading() {
-//        
+        self.view.activityStopAnimating()
     }
     
     func setparty(partyState: [PartyStateData]) {

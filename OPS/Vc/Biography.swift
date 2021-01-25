@@ -27,19 +27,21 @@ class Biography: UIViewController,BiographyView {
 
         // Do any additional setup after loading the view.
         self.callAPI()
+        politicalTitle.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "political-carrer_text", comment: "")
+        personalTitle.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "personal_text", comment: "")
     }
     
     func callAPI() {
         presenter.attachView(view: self)
-        presenter.getBiography(user_id: "1")
+        presenter.getBiography(user_id: GlobalVariables.shared.user_id)
     }
     
     func startLoading() {
-//
+        self.view.activityStartAnimating()
     }
     
     func finishLoading() {
-//
+        self.view.activityStopAnimating()
     }
 
     func setBio(bio: [BiographyData]) {
@@ -55,9 +57,18 @@ class Biography: UIViewController,BiographyView {
             self.personalLifeEn.append(persLifeEn!)
             self.politicalCarrerTa.append(politicalTa!)
             self.politicalCarrerEn.append(politicalEn!)
-
-            self.personalText.text = personalLifeEn
-            self.politicalText.text = politicalCarrerEn
+            
+            if LocalizationSystem.sharedInstance.getLanguage() == "en"
+            {
+            self.personalText.setHTMLFromString(text: personalLifeEn)
+            self.politicalText.setHTMLFromString(text: politicalCarrerEn)
+            }
+            else
+            {
+            self.personalText.setHTMLFromString(text: personalLifeTa)
+            self.politicalText.setHTMLFromString(text: politicalCarrerTa)
+            }
+            print(personalLifeTa)
         }
     }
     
@@ -76,3 +87,4 @@ class Biography: UIViewController,BiographyView {
     }
     */
 }
+//setHTMLFromString(text: personalLifeEn)

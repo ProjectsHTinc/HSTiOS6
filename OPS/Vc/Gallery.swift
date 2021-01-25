@@ -12,6 +12,10 @@ class Gallery: UITableViewController {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionView: UICollectionView!
+    @IBOutlet weak var videoLabel: UILabel!
+    @IBOutlet weak var imagesLabel: UILabel!
+    @IBOutlet weak var viewAllImageLabel: UIButton!
+    @IBOutlet weak var viewAllVideoLabel: UIButton!
     
     /*Get welcome video Url*/
     let presenter = GalleryPresenter(galleryServices: GalleryServices())
@@ -36,11 +40,27 @@ class Gallery: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.backgroundColor = UIColor.white
         self.callAPI()
+        self.preferedLanguage()
     }
     
+    func preferedLanguage() {
+        videoLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "videoTitle_text", comment: "")
+        imagesLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "imageTitle_text", comment: "")
+        if LocalizationSystem.sharedInstance.getLanguage() == "en"
+        {
+            viewAllImageLabel.setTitle("View all", for: .normal)
+            viewAllVideoLabel.setTitle("View all", for: .normal)
+        }
+        else
+        {
+            viewAllImageLabel.setTitle("அனைத்தையும் காட்டு", for: .normal)
+            viewAllVideoLabel.setTitle("அனைத்தையும் காட்டு", for: .normal)
+        }
+    }
+  
     func callAPI() {
         presenter.attachView(view: self)
-        presenter.getGallery(user_id: self.user_id)
+        presenter.getGallery(user_id: GlobalVariables.shared.user_id)
     }
     
     @IBAction func imageViewAll(_ sender: Any) {
@@ -134,8 +154,6 @@ class Gallery: UITableViewController {
             vc.videoId = self.videoId
         }
     }
-    
-
 }
 
 extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GalleryView {
@@ -195,7 +213,6 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             cell.shadowDecorate()
             return cell
         }
-        
     }
     
 //    @objc func likeButtonImageClicked() {
@@ -336,8 +353,6 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 //        AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: errorMessage, complition: {
 //        })
     }
-    
-    
 }
 
 extension UICollectionViewCell {
@@ -357,3 +372,4 @@ extension UICollectionViewCell {
         layer.cornerRadius = radius
     }
 }
+ 

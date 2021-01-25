@@ -647,4 +647,71 @@ class APIManager: NSObject {
         }
       )
     }
+    
+    func callAPIUserProfileUpdate(user_id:String,full_name:String,phone_number:String,email_id:String,gender:String,dob:String, onSuccess successCallback: ((_ userProfileUpdateModel: UserProfileUpdateModel) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.profileUpdateUrl
+        // Set Parameters
+        let parameters: Parameters =  ["user_id":user_id,"full_name":full_name, "phone_number":phone_number, "email_id":email_id, "gender":gender,"dob":dob]
+        print(user_id)
+        print(full_name)
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+          
+          guard let status = responseObject["status"].string, status == "success" else{
+              failureCallback?(responseObject["msg"].string!)
+              return
+        }
+         let respMsg = responseObject["msg"].string
+         let respStatus = responseObject["status"].string
+
+         // Create object
+         let sendToModel = UserProfileUpdateModel()
+         sendToModel.msg = respMsg
+         sendToModel.status = respStatus
+        
+        successCallback?(sendToModel)
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+     )
+    }
+    
+    func callAPIProfileDetail(user_id:String,onSuccess successCallback: ((_ greetingCountModel: [ProfileDetailModel]) -> Void)?,onFailure failureCallback: ((_ errorMessage: String) -> Void)?) {
+        // Build URL
+        let url = APIURL.url + APIFunctionName.profileDetailsUrl
+        // Set Parameters
+        let parameters: Parameters =  ["user_id":user_id]
+        // call API
+        self.createRequest(url, method: .post, headers: nil, parameters: parameters as? [String : String], onSuccess: {(responseObject: JSON) -> Void in
+        // Create dictionary
+        print(responseObject)
+          guard let msg = responseObject["msg"].string, msg == "User Details" else{
+              failureCallback?(responseObject["msg"].string!)
+              return
+        }
+            
+              if let responseDict = responseObject["user_details"].arrayObject
+                {
+                      let profileDetailModel = responseDict as! [[String:AnyObject]]
+                      // Create object
+                      var data = [ProfileDetailModel]()
+                      for item in profileDetailModel {
+                          let single = ProfileDetailModel.build(item)
+                          data.append(single)
+                      }
+                      // Fire callback
+                      successCallback?(data)
+                 } else {
+                      failureCallback?("An error has occured.")
+                  }
+        },
+        onFailure: {(errorMessage: String) -> Void in
+            failureCallback?(errorMessage)
+        }
+     )
+    }
 }

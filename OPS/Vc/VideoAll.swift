@@ -31,7 +31,7 @@ class VideoAll: UIViewController {
     
     func callAPI() {
         presenter.attachView(view: self)
-        presenter.getvideosAll(user_id: "1")
+        presenter.getvideosAll(user_id:GlobalVariables.shared.user_id)
     }
 
     
@@ -76,16 +76,16 @@ extension VideoAll : UICollectionViewDelegate, UICollectionViewDataSource, UICol
             cell.videoTitle.text = res.title_ta
 
         }
-        cell.videoLikeOutlet.tag = indexPath.row
-        cell.videoLikeOutlet.addTarget(self, action: #selector(likeButtonVideoClicked), for: .touchUpInside)
+//        cell.videoLikeOutlet.tag = indexPath.row
+//        cell.videoLikeOutlet.addTarget(self, action: #selector(likeButtonVideoClicked), for: .touchUpInside)
         cell.shadowDecorate()
         return cell
         
     }
     
-    @objc func likeButtonVideoClicked() {
-
-    }
+//    @objc func likeButtonVideoClicked() {
+//
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let res = resp[indexPath.row]

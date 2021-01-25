@@ -9,10 +9,11 @@ import Foundation
 
 struct ElectionDetailData {
     
-    var state_name_ta : String?
-    var state_name_en : String?
-    var state_id : String?
-    var state_logo: String?
+    
+    var election_year : String?
+    var seats_won : String?
+    var party_leader_en : String?
+    var party_leader_ta : String?
 }
 
 protocol ElectionDetailView : NSObjectProtocol {
@@ -49,7 +50,7 @@ class ElectionDetailPresnter: NSObject {
                 }
                 else {
                     let mappedUsers = resp.map {
-                        return ElectionDetailData(state_name_ta: "\($0.state_name_ta ?? "")", state_name_en: "\($0.state_name_en ?? "")", state_id: "\($0.state_id ?? "")", state_logo: "\($0.state_logo ?? "")")
+                        return ElectionDetailData(election_year: "\($0.election_year ?? "")", seats_won: "\($0.seats_won ?? "")", party_leader_en: "\($0.party_leader_en ?? "")", party_leader_ta: "\($0.party_leader_ta ?? "")")
                     }
                     self.electionDetailView?.setelection(electionDetail: mappedUsers)
                 }

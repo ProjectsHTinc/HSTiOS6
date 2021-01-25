@@ -41,7 +41,7 @@ class Home: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: self.user_id, nf_category_id: "2", search_text: "No", offset: "0", rowcount: "50")
+        self.callAPI(user_id:GlobalVariables.shared.user_id, nf_category_id: "2", search_text: "No", offset: "0", rowcount: "50")
         let value = UserDefaults.standard.object(forKey: "welcomeViedoKey") ?? ""
         if value as! String == "yes"
         {
@@ -55,9 +55,9 @@ class Home: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let navigationbar = self.navigationController?.navigationBar {
-            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
-        }
+//        if let navigationbar = self.navigationController?.navigationBar {
+//            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
+//        }
     }
     func callAPI(user_id:String, nf_category_id:String, search_text: String, offset:String, rowcount:String)
     {
@@ -107,7 +107,7 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
             let url = items.nf_video_token_id
             let date = items.news_date
             let title_en = items.title_en
-            let title_ta = items.title_en
+            let title_ta = items.title_ta
             let decrip_en = items.description_en
             let decrip_ta = items.description_ta
 //            let likecount = items.likes_count
@@ -211,7 +211,7 @@ extension Home: HomeView , UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320
+        return 272
     }
     
 }

@@ -13,6 +13,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var videoTitle: UILabel!
     @IBOutlet weak var playerView: WKYTPlayerView!
     @IBOutlet weak var videoDate: UILabel!
-    @IBOutlet weak var videoLikeOutlet: UIButton!
-    
+//    @IBOutlet weak var videoLikeOutlet: UIButton!
+     
 }
+ 

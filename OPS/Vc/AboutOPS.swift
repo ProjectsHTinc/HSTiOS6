@@ -11,8 +11,6 @@ class AboutOPS: UIViewController {
 
     @IBOutlet weak var segmentView: UIView!
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

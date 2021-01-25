@@ -13,8 +13,8 @@ class HomePageDetail: UIViewController {
     @IBOutlet weak var imageSlider: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var likeOutlet: UIButton!
-    @IBOutlet weak var shareOutlet: UIButton!
+//    @IBOutlet weak var likeOutlet: UIButton!
+//    @IBOutlet weak var shareOutlet: UIButton!
     @IBOutlet weak var descripLabel: UILabel!
     @IBOutlet weak var descrip: UILabel!
     @IBOutlet weak var navItem: UINavigationItem!
@@ -42,24 +42,11 @@ class HomePageDetail: UIViewController {
         // Do any additional setup after loading the view.
         self.callAPI()
         self.updateDetails()
-//        self.navigationController?.navigationBar.barTintColor = UIColor.clear
-       
-//        let gradientLayer = CAGradientLayer()
-//        let layerY = -UIApplication.shared.statusBarFrame.size.height as CGFloat
-//        let layerHeight = (self.navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height as CGFloat
-//        gradientLayer.frame = CGRect(x: 0, y: layerY, width: 1366, height: layerHeight)
-//        gradientLayer.colors = [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 8.0).cgColor, UIColor(red: 6/255.0, green: 74/255.0, blue: 17/255.0, alpha: 0.6).cgColor]
-//        self.navigationController?.navigationBar.layer.addSublayer(gradientLayer)
-//        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .white
-//        let navigationBar = navigationController!.navigationBar
-//        navigationBar.tintColor = UIColor.white
-       
-//                                                                                                                                                                          UINavigationBar.appearance().tintColor = UIColor.white
-
 //        if let navigationbar = self.navigationController?.navigationBar {
 //            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
 //        }
     }
+    
     override func didMove(toParent parent: UIViewController?) {
         super.didMove(toParent: parent)
 
@@ -71,7 +58,7 @@ class HomePageDetail: UIViewController {
     func callAPI()
     {
         presenter.attachView(view: self)
-        presenter.getHomeDetailResp(user_id: "1", newsfeed_id: newsfeed_id)
+        presenter.getHomeDetailResp(user_id: GlobalVariables.shared.user_id, newsfeed_id: newsfeed_id)
     }
     
     func updateDetails() {
@@ -81,8 +68,8 @@ class HomePageDetail: UIViewController {
             self.dateLabel.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
             self.descrip.isHidden = true
             self.descripLabel.isHidden = true
-            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
-            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+//            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
+//            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
         }
         else
         {
@@ -91,10 +78,9 @@ class HomePageDetail: UIViewController {
             self.descrip.isHidden = false
             self.descripLabel.isHidden = false
             self.descrip.setHTMLFromString(text: descp)
-            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
-            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+//            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
+//            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
         }
-
     }
     
     func startTimer() {
@@ -131,11 +117,11 @@ class HomePageDetail: UIViewController {
         }
     }
 
-    @IBAction func share(_ sender: Any)
-    {
-        
-    }
-    
+//    @IBAction func share(_ sender: Any)
+//    {
+//
+//    }
+//
     /*
     // MARK: - Navigation
 

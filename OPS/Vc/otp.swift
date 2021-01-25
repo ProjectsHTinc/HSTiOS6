@@ -13,6 +13,7 @@ class otp: UIViewController,UITextFieldDelegate,LoginView {
     var otp = String()
     var mobileNumber = String()
     var user_id = String()
+      var to_userProfile = String()
     //var otpData = [OtpData]()
     let presenterLoginService = LoginPresenter(loginService: LoginService())
     let presenterOtpService = OTPPresenter(oTPService: OTPService())
@@ -39,6 +40,7 @@ class otp: UIViewController,UITextFieldDelegate,LoginView {
         self.hideKeyboardWhenTappedAround()
         view.bindToKeyboard()
         self.setTextfieldDelegates()
+        to_userProfile = "To_userProfile"
 //        self.textfield1.addBottomBorder()
 //        self.textfield2.addBottomBorder()
 //        self.textfield3.addBottomBorder()
@@ -168,21 +170,21 @@ class otp: UIViewController,UITextFieldDelegate,LoginView {
         presenterOtpService.getOtpForOtpPage(mobile_no: self.mobileNumber, otp: self.otp)
         
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        // Get the new view controller using segue.destination.
        // Pass the selected object to the new view controller.
-       if (segue.identifier == "to_Dashboard"){
-          let nav = segue.destination as! UINavigationController
-          let vc = nav.topViewController as! TabbarController
-          vc.user_id  = self.user_id
+       if (segue.identifier == "to_userProfile"){
+       let vc = segue.destination as! UserProfile
+//         let vc = nav.topViewController as! TabbarController
+       vc.from_userProfile  = self.to_userProfile
        }
     }
     
-    @objc public func backButtonClick()
+    @objc public override func backButtonClick()
     {
         self.dismiss(animated: true, completion: nil)
     }
-    
 }
 
 extension otp: OtpView {
@@ -197,13 +199,19 @@ extension otp: OtpView {
     }
     
     func setOtp(full_name: String,user_id: String, profile_pic: String, language_id: String, phone_number: String) {
-        //let data = [full_name,user_id,profile_pic,language_id,phone_number]
-        UserDefaults.standard.setValue(user_id, forKey: UserDefaultsKey.userIDkey.rawValue)
-        self.user_id = UserDefaults.standard.object(forKey: UserDefaultsKey.userIDkey.rawValue) as! String
-        self.performSegue(withIdentifier: "to_Dashboard", sender: self)
+        
+        UserDefaults.standard.set(user_id, forKey: UserDefaultsKey.userIDkey.rawValue)
+        GlobalVariables.shared.user_id = UserDefaults.standard.object(forKey: UserDefaultsKey.userIDkey.rawValue) as! String
+        
+        UserDefaults.standard.set(profile_pic, forKey: UserDefaultsKey.userProfilePicKey.rawValue)
+        GlobalVariables.shared.user_Image = UserDefaults.standard.object(forKey: UserDefaultsKey.userProfilePicKey.rawValue) as! String
+        
+        self.performSegue(withIdentifier: "to_userProfile", sender: self)
     }
+    
     func setOtp(fullname:String) {
     }
+    
     func setEmptyOtp(errorMessage: String) {
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: errorMessage, complition: {
         })
