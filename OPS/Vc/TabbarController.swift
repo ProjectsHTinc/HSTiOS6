@@ -29,6 +29,8 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         searchBar ()
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0)
         print("karan\(GlobalVariables.shared.user_id)")
+        let user_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.userIDkey.rawValue) ?? ""
+        
        
     }
      
@@ -72,7 +74,9 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
     
     @IBAction func profileAction(_ sender: Any) {
         
-        if GlobalVariables.shared.user_id == ""
+        let user_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.userIDkey.rawValue) ?? ""
+        
+        if user_Id as! String == ""
         {
             self.performSegue(withIdentifier: "to_login", sender: self)
         }
@@ -80,6 +84,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         {
             self.performSegue(withIdentifier: "to_settings", sender: self)
         }
+        
     }
     
     override func viewDidLayoutSubviews() {
