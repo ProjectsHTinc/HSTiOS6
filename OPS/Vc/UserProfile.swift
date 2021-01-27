@@ -45,6 +45,7 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
     var profilePic = String()
     var profilePicURL = String()
     var from_userProfile = String()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,22 +62,25 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
         self.emailIdTextField.delegate = self
         self.dobTextField.delegate = self
         self.genderTextField.delegate = self
-        self.addCustomizedBackBtn(title:"UserProfile")
-        
+//        self.addCustomizedBackBtn(title:"UserProfile")
+        if from_userProfile == "To_userProfile" {
+            self.navigationItem.setHidesBackButton(true, animated: true)
+        }
+        self.title = "UserProfile"
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
         print(from_userProfile)
         print("12345")
-        if from_userProfile == "To_userProfile" {
-            navigationController?.navigationBar.topItem?.hidesBackButton = true
-        }
+     
     }
     
     func CallAPIProfileDetail ()
     {
+        let user_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.userIDkey.rawValue) ?? ""
         presenterTm.attachView(view: self)
-        presenterTm.getProfileDeatail(user_id:GlobalVariables.shared.user_id)
+        presenterTm.getProfileDeatail(user_id:user_Id as! String)
     }
     
     func startLoading() {
@@ -253,18 +257,6 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
 //            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { [self]
 //                UIAlertAction in
 //                NSLog("OK Pressed")
-//
-//                UserDefaults.standard.setValue(nameTextField, forKey: UserDefaultsKey.userIDkey.rawValue)
-//                           GlobalVariables.shared.userName = UserDefaults.standard.object(forKey: UserDefaultsKey.userNamekey.rawValue) as! String
-//
-//                           UserDefaults.standard.setValue(phoneNumTextField, forKey: UserDefaultsKey.userIDkey.rawValue)
-//                           GlobalVariables.shared.userPhoneNumber = UserDefaults.standard.object(forKey: UserDefaultsKey.userPhoneNumKey.rawValue) as! String
-//
-//                           UserDefaults.standard.setValue(dobTextField, forKey: UserDefaultsKey.userIDkey.rawValue)
-//                           GlobalVariables.shared.userDOB = UserDefaults.standard.object(forKey: UserDefaultsKey.userDobKey.rawValue) as! String
-//
-//                           UserDefaults.standard.setValue(genderTextField, forKey: UserDefaultsKey.userIDkey.rawValue)
-//                           GlobalVariables.shared.userGender = UserDefaults.standard.object(forKey: UserDefaultsKey.userGenderKey.rawValue) as! String
 //            }
 //                alertController.addAction(okAction)
 //

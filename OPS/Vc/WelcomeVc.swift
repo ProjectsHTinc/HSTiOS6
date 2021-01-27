@@ -39,17 +39,8 @@ class WelcomeVc: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
 extension WelcomeVc: VideoView
 {
     func startLoading() {
@@ -75,6 +66,5 @@ extension WelcomeVc: VideoView
         AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: errorMessage, complition: {
         })
     }
-    
     
 }

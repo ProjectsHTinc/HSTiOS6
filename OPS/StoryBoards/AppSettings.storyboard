@@ -47,19 +47,14 @@
                                             <segue destination="MuZ-eb-UYb" kind="show" id="UT4-mz-UTc"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbA-EQ-Ttg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbA-EQ-Ttg">
                                         <rect key="frame" x="39" y="74" width="313" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="6EZ-sZ-oZK"/>
                                             <constraint firstAttribute="width" constant="313" id="ihQ-HU-fH5"/>
                                         </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Edit Profile">
-                                                <attributes>
-                                                    <font key="NSFont" size="17" name="PerpetuaTitlingMT-Light"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
+                                        <fontDescription key="fontDescription" name="PerpetuaTitlingMT-Light" family="Perpetua Titling MT" pointSize="17"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz4-1f-mgr">

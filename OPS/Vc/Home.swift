@@ -43,7 +43,7 @@ class Home: UIViewController {
         self.tableView.backgroundColor = UIColor.white
         self.callAPI(user_id:GlobalVariables.shared.user_id, nf_category_id: "2", search_text: "No", offset: "0", rowcount: "50")
         let value = UserDefaults.standard.object(forKey: "welcomeViedoKey") ?? ""
-        if value as! String == "yes"
+        if value as! String == ""
         {
             self.performSegue(withIdentifier: "pop", sender: self)
         }
