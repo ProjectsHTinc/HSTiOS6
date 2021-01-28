@@ -94,7 +94,6 @@
 		6BF32FA925A56FDD002E64D7 /* ElectionDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF32FA825A56FDD002E64D7 /* ElectionDetailModel.swift */; };
 		6BF3B3DB259DAE6F0061EC66 /* NotificationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3B3DA259DAE6F0061EC66 /* NotificationDetails.swift */; };
 		6BF3B3E0259DB1970061EC66 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3B3DF259DB1970061EC66 /* GradientView.swift */; };
-		6BF3B3E5259DDD380061EC66 /* AboutOPS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF3B3E4259DDD380061EC66 /* AboutOPS.swift */; };
 		6BF76AC925BB043A0078AF1A /* CustomNavigationBackButtonTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF76AC825BB043A0078AF1A /* CustomNavigationBackButtonTitle.swift */; };
 		6BF834EF252338F3007245F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF834EE252338F3007245F8 /* AppDelegate.swift */; };
 		6BF834F1252338F3007245F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF834F0252338F3007245F8 /* SceneDelegate.swift */; };
@@ -245,7 +244,6 @@
 		6BF32FA825A56FDD002E64D7 /* ElectionDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionDetailModel.swift; sourceTree = "<group>"; };
 		6BF3B3DA259DAE6F0061EC66 /* NotificationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetails.swift; sourceTree = "<group>"; };
 		6BF3B3DF259DB1970061EC66 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		6BF3B3E4259DDD380061EC66 /* AboutOPS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutOPS.swift; sourceTree = "<group>"; };
 		6BF76AC825BB043A0078AF1A /* CustomNavigationBackButtonTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBackButtonTitle.swift; sourceTree = "<group>"; };
 		6BF834EB252338F3007245F8 /* OPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BF834EE252338F3007245F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -558,7 +556,6 @@
 				6B237C51252AFE0E0001081F /* LiveEvents.swift */,
 				6BF8EFC9252B558E00E4908B /* VideoDetail.swift */,
 				6B7E4D1B252C8ECB00815F35 /* Social.swift */,
-				6BF3B3E4259DDD380061EC66 /* AboutOPS.swift */,
 				6BEF40BE259F00BC00881D5D /* Biography.swift */,
 				6BEF40C3259F011700881D5D /* Achievments.swift */,
 				6BEF40C8259F013400881D5D /* AboutParty.swift */,
@@ -842,7 +839,6 @@
 				6B237C73252B0F600001081F /* ImageCollectionViewCell.swift in Sources */,
 				6BEB42A825A06CE100C4C9F0 /* AchievementsModel.swift in Sources */,
 				6B5DC20D25A05545005F6539 /* BiographyModel.swift in Sources */,
-				6BF3B3E5259DDD380061EC66 /* AboutOPS.swift in Sources */,
 				6BA21FFD25AC51BE007E1FF4 /* ElectionDetailCell.swift in Sources */,
 				6B07421725A42356004E5232 /* PartyModel.swift in Sources */,
 				6B77DAD725A4401600DF48DC /* PartyStateListCell.swift in Sources */,

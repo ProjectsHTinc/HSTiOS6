@@ -62,7 +62,6 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
         self.emailIdTextField.delegate = self
         self.dobTextField.delegate = self
         self.genderTextField.delegate = self
-//        self.addCustomizedBackBtn(title:"UserProfile")
         if from_userProfile == "To_userProfile" {
             self.navigationItem.setHidesBackButton(true, animated: true)
         }
@@ -461,13 +460,13 @@ extension UserProfile : UITextFieldDelegate, UITextViewDelegate{
            else {
             self.updateAPI(user_id:GlobalVariables.shared.user_id,full_name: self.nameTextField.text!, phone_number: self.phoneNumTextField.text!, email_id: self.emailIdTextField.text!, dob: self.dobTextField.text!, gender: self.genderTextField.text!)
             
-            if from_userProfile == "To_userProfile" {
+            if from_userProfile == "To_userProfile"
+            {
                 self.performSegue(withIdentifier: "to_DashBoard", sender: self)
-                print("1")
             }
-            else {
+            else
+            {
                 self.performSegue(withIdentifier: "to_settings", sender: self)
-                print("2")
             }
         }
     }
@@ -477,8 +476,7 @@ extension UserProfile : UITextFieldDelegate, UITextViewDelegate{
        // Pass the selected object to the new view controller.
        if (segue.identifier == "to_settings"){
         _ = segue.destination as! AppSettings
-//          let vc = nav.topViewController as! TabbarController
-//          vc.user_id  = self.user_id
+
        }
        else if(segue.identifier == "to_DashBoard") {
         _ = segue.destination as! UINavigationController

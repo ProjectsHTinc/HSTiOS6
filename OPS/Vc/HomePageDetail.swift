@@ -180,9 +180,3 @@ extension HomePageDetail : UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
 }
-//let gradientLayer = CAGradientLayer()
-//let layerY = -UIApplication.shared.statusBarFrame.size.height as CGFloat
-//let layerHeight = (self.navigationController?.navigationBar.frame.size.height)! + UIApplication.shared.statusBarFrame.size.height as CGFloat
-//gradientLayer.frame = CGRect(x: 0, y: layerY, width: 1366, height: layerHeight)
-//gradientLayer.colors = [UIColor(red: 16/255.0, green: 57/255.0, blue: 82/255.0, alpha: 1.0).cgColor, UIColor(red: 17/255.0, green: 132/255.0, blue: 157/255.0, alpha: 1.0).cgColor]
-//self.navigationController?.navigationBar.layer.addSublayer(gradientLayer)
