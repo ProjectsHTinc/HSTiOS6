@@ -66,7 +66,8 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
             self.navigationItem.setHidesBackButton(true, animated: true)
         }
         self.title = "UserProfile"
-    
+        userImage.setRounded()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,6 +83,7 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
         presenterTm.getProfileDeatail(user_id:user_Id as! String)
     }
     
+   
     func startLoading() {
 //
     }
@@ -388,7 +390,7 @@ extension UserProfile : UITextFieldDelegate, UITextViewDelegate{
            formatter.dateFormat = "yyyy-MM-dd"
            dateFormatted = formatter.string(from: datePicker.date)
            selectedDate = datePicker.date
-           let formatted = self.FormattedDateFromString(dateString: dateFormatted, withFormat: "dd-MM-YYYY")
+           let formatted = self.FormattedDateFromString(dateString: dateFormatted, withFormat: "yyyy-MM-dd")
            dobTextField.text = formatted
            self.view.endEditing(true)
        }
@@ -481,5 +483,13 @@ extension UserProfile : UITextFieldDelegate, UITextViewDelegate{
        else if(segue.identifier == "to_DashBoard") {
         _ = segue.destination as! UINavigationController
        }
+    }
+}
+
+extension UIImageView {
+
+    func setRounded() {
+        self.layer.cornerRadius = (self.frame.width / 2) //instead of let radius = CGRectGetWidth(self.frame) / 2
+        self.layer.masksToBounds = true
     }
 }

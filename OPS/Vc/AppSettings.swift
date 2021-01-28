@@ -16,9 +16,10 @@ class AppSettings: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.userImageView.sd_setImage(with: URL(string:GlobalVariables.shared.user_Image), placeholderImage: UIImage(named:"profile-1"))
+        let user_image = UserDefaults.standard.object(forKey: UserDefaultsKey.userProfilePicKey.rawValue) ?? ""
+        self.userImageView.sd_setImage(with: URL(string:user_image as! String), placeholderImage: UIImage(named:"profile-1"))
         self.setUpView()
-        // Do any additional setup after loading the view.
+       
     }
     
     @IBAction func logOutAction(_ sender: Any) {
