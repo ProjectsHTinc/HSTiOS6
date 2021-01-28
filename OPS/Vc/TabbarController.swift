@@ -20,26 +20,18 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
 
         // Do any additional setup after loading the view.
         /*Tabbar border width*/
-//        
+      
         tabBar.layer.borderWidth = 1
         tabBar.layer.borderColor = UIColor.lightGray.cgColor
         tabBar.clipsToBounds = true
         navTitleOnLeftSide ()
         setupMiddleButton ()
         searchBar ()
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0)
-        print("karan\(GlobalVariables.shared.user_id)")
-        let user_Id = UserDefaults.standard.object(forKey: UserDefaultsKey.userIDkey.rawValue) ?? ""
-        
-       
+
     }
      
     override func viewDidAppear(_ animated: Bool) {
-
-        print(user_id)
-        print("hshshsh123")
-        print(GlobalVariables.shared.user_id)
-        print("hdhuh")
+//
     }
     
     func searchBar()
@@ -56,7 +48,7 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
             textfield.textColor = UIColor.blue
             if let backgroundview = textfield.subviews.first {
-                //                                                                                                                                                       Background color
+                //  Background color
                 backgroundview.backgroundColor = UIColor.white
                 // Rounded corner
                 backgroundview.layer.cornerRadius = 10;
@@ -64,9 +56,9 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         }
     }
         
-//        if let navigationbar = self.navigationController?.navigationBar {
-//            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
-//        }
+        if let navigationbar = self.navigationController?.navigationBar {
+            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
+        }
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
