@@ -12,12 +12,16 @@ class Gallery: UITableViewController {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var videoCollectionView: UICollectionView!
+    @IBOutlet weak var videoLabel: UILabel!
+    @IBOutlet weak var imagesLabel: UILabel!
+    @IBOutlet weak var viewAllImageLabel: UIButton!
+    @IBOutlet weak var viewAllVideoLabel: UIButton!
     
     /*Get welcome video Url*/
     let presenter = GalleryPresenter(galleryServices: GalleryServices())
     var respImages = [GalleryData]()
     var respVideos = [GalleryData]()
-    
+    var user_id = String()
     var eventTitle = String()
     var date = String()
     var likesCnt = String()
@@ -36,11 +40,27 @@ class Gallery: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.tableView.backgroundColor = UIColor.white
         self.callAPI()
+        self.preferedLanguage()
     }
     
+    func preferedLanguage() {
+        videoLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "videoTitle_text", comment: "")
+        imagesLabel.text = LocalizationSystem.sharedInstance.localizedStringForKey(key: "imageTitle_text", comment: "")
+        if LocalizationSystem.sharedInstance.getLanguage() == "en"
+        {
+            viewAllImageLabel.setTitle("View all", for: .normal)
+            viewAllVideoLabel.setTitle("View all", for: .normal)
+        }
+        else
+        {
+            viewAllImageLabel.setTitle("அனைத்தையும் காட்டு", for: .normal)
+            viewAllVideoLabel.setTitle("அனைத்தையும் காட்டு", for: .normal)
+        }
+    }
+  
     func callAPI() {
         presenter.attachView(view: self)
-        presenter.getGallery(user_id: "1")
+        presenter.getGallery(user_id: GlobalVariables.shared.user_id)
     }
     
     @IBAction func imageViewAll(_ sender: Any) {
@@ -119,8 +139,8 @@ class Gallery: UITableViewController {
             vc.nf_cover_image = self.nf_cover_image
             vc.eventTitle = self.eventTitle
             vc.date = self.date
-            vc.likesCount = self.likesCnt
-            vc.shareCount = self.shareCnt
+//            vc.likesCount = self.likesCnt
+//            vc.shareCount = self.shareCnt
             //vc.descp = self.descp
             vc.fromView = "imageAll"
         }
@@ -129,13 +149,11 @@ class Gallery: UITableViewController {
             let vc = segue.destination as! VideoDetail
             vc.eventName = self.eventTitle
             vc.date = self.date
-            vc.likeCount = self.likesCnt
-            vc.shareCount = self.shareCnt
+//            vc.likeCount = self.likesCnt
+//            vc.shareCount = self.shareCnt
             vc.videoId = self.videoId
         }
     }
-    
-
 }
 
 extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, GalleryView {
@@ -168,8 +186,8 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 cell.imageTitle.text = resp.title_ta
 
             }
-            cell.imageLikeOutlet.tag = indexPath.row
-            cell.imageLikeOutlet.addTarget(self, action: #selector(likeButtonImageClicked), for: .touchUpInside)
+//            cell.imageLikeOutlet.tag = indexPath.row
+//            cell.imageLikeOutlet.addTarget(self, action: #selector(likeButtonImageClicked), for: .touchUpInside)
             cell.shadowDecorate()
             return cell
 
@@ -190,21 +208,20 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 cell.videoTitle.text = resp.title_ta
 
             }
-            cell.videoLikeOutlet.tag = indexPath.row
-            cell.videoLikeOutlet.addTarget(self, action: #selector(likeButtonVideoClicked), for: .touchUpInside)
+//            cell.videoLikeOutlet.tag = indexPath.row
+//            cell.videoLikeOutlet.addTarget(self, action: #selector(likeButtonVideoClicked), for: .touchUpInside)
             cell.shadowDecorate()
             return cell
         }
-        
     }
     
-    @objc func likeButtonImageClicked() {
-
-    }
-    
-    @objc func likeButtonVideoClicked() {
-
-    }
+//    @objc func likeButtonImageClicked() {
+//
+//    }
+//
+//    @objc func likeButtonVideoClicked() {
+//
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -220,8 +237,8 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 self.eventTitle = res.title_ta!
             }
             self.date = res.news_date!
-            self.likesCnt = res.likes_count!
-            self.shareCnt = res.share_count!
+//            self.likesCnt = res.likes_count!
+//            self.shareCnt = res.share_count!
             self.newsfeed_id = res.newsfeed_id!
             self.nf_cover_image = res.nf_cover_image!
             self.performSegue(withIdentifier: "to_detail", sender: self)
@@ -238,8 +255,8 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
                 self.eventTitle = res.title_ta!
             }
             self.date = res.news_date!
-            self.likesCnt = res.likes_count!
-            self.shareCnt = res.share_count!
+//            self.likesCnt = res.likes_count!
+//            self.shareCnt = res.share_count!
             self.videoId = res.nf_video_token_id!
             self.performSegue(withIdentifier: "to_videoDetail", sender: self)
         }
@@ -336,8 +353,6 @@ extension Gallery : UICollectionViewDelegate, UICollectionViewDataSource, UIColl
 //        AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: errorMessage, complition: {
 //        })
     }
-    
-    
 }
 
 extension UICollectionViewCell {
@@ -357,3 +372,4 @@ extension UICollectionViewCell {
         layer.cornerRadius = radius
     }
 }
+ 

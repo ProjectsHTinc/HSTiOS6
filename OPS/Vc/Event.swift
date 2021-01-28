@@ -14,7 +14,7 @@ class Event: UIViewController {
     /*Get welcome video Url*/
     let presenter = HomePresenter(homeServices: HomeServices())
     var resp = [HomeData]()
-    
+    var user_id = String()
     var videoUrl =  [String]()
     var dateArr =  [String]()
     var title_en =  [String]()
@@ -39,7 +39,7 @@ class Event: UIViewController {
 
         // Do any additional setup after loading the view.
         self.tableView.backgroundColor = UIColor.white
-        self.callAPI(user_id: "1", nf_category_id: "3", offset: "0", rowcount: "5")
+        self.callAPI(user_id: GlobalVariables.shared.user_id, nf_category_id: "3", offset: "0", rowcount: "5")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,8 +70,8 @@ class Event: UIViewController {
              vc.nf_cover_image = self.nf_cover_image
              vc.eventTitle = self.eventTitle
              vc.date = self.date
-             vc.likesCount = self.likesCnt
-             vc.shareCount = self.shareCnt
+//             vc.likesCount = self.likesCnt
+//             vc.shareCount = self.shareCnt
              vc.descp = self.descp
 
          }
@@ -95,11 +95,11 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
             let url = items.nf_video_token_id
             let date = items.news_date
             let title_en = items.title_en
-            let title_ta = items.title_en
+            let title_ta = items.title_ta
             let decrip_en = items.description_en
             let decrip_ta = items.description_ta
-            let likecount = items.likes_count
-            let sharecount = items.share_count
+//            let likecount = items.likes_count
+//            let sharecount = items.share_count
             let newsFeed_id = items.newsfeed_id
             let coverImage = items.nf_cover_image
             
@@ -109,8 +109,8 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
             self.title_ta.append(title_ta ?? "")
             self.descrip_en.append(decrip_en ?? "")
             self.descrip_ta.append(decrip_ta ?? "")
-            self.likeCount.append(likecount ?? "")
-            self.shareCount.append(sharecount ?? "")
+//            self.likeCount.append(likecount ?? "")
+//            self.shareCount.append(sharecount ?? "")
             self.newsfeed_idArr.append(newsFeed_id ?? "")
             self.nf_cover_imageArr.append(coverImage ?? "")
         }
@@ -133,15 +133,15 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
         cell.eventImage.sd_setImage(with: URL(string: nf_cover_imageArr[indexPath.row]), placeholderImage: UIImage(named: ""))
         let formatedDate = self.formattedDateFromString(dateString: dateArr[indexPath.row], withFormat: "dd MMM yyyy")
         cell.date.text = formatedDate
-        let likecount = likeCount[indexPath.row]
-        let sharecount = shareCount[indexPath.row]
-        cell.likeOutlet.setTitle(likecount + " " + "Likes", for: UIControl.State.normal)
-        cell.shareOutlet.setTitle(sharecount + " " + "Share", for: UIControl.State.normal)
-        cell.likeOutlet.tag = indexPath.row
-        cell.shareOutlet.tag = indexPath.row
-        
-        cell.likeOutlet.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
-        cell.shareOutlet.addTarget(self, action: #selector(shareButtonClicked), for: .touchUpInside)
+//        let likecount = likeCount[indexPath.row]
+//        let sharecount = shareCount[indexPath.row]
+//        cell.likeOutlet.setTitle(likecount + " " + "Likes", for: UIControl.State.normal)
+//        cell.shareOutlet.setTitle(sharecount + " " + "Share", for: UIControl.State.normal)
+//        cell.likeOutlet.tag = indexPath.row
+//        cell.shareOutlet.tag = indexPath.row
+//
+//        cell.likeOutlet.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+//        cell.shareOutlet.addTarget(self, action: #selector(shareButtonClicked), for: .touchUpInside)
         
         if LocalizationSystem.sharedInstance.getLanguage() == "en"
         {
@@ -176,7 +176,7 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
             if indexPath.row == lastElement
             {
                 let lE = lastElement + 1
-                self.callAPI(user_id: "1", nf_category_id: "2", offset: String(lE), rowcount: "5")
+                self.callAPI(user_id: self.user_id, nf_category_id: "2", offset: String(lE), rowcount: "5")
 
             }
         }
@@ -194,8 +194,8 @@ extension Event: HomeView , UITableViewDelegate, UITableViewDataSource
             self.descp = descrip_ta[indexPath.row]
         }
         self.date = dateArr[indexPath.row]
-        self.likesCnt = likeCount[indexPath.row]
-        self.shareCnt = shareCount[indexPath.row]
+//        self.likesCnt = likeCount[indexPath.row]
+//        self.shareCnt = shareCount[indexPath.row]
         self.newsfeed_id = newsfeed_idArr[indexPath.row]
         self.nf_cover_image = newsfeed_idArr[indexPath.row]
         self.performSegue(withIdentifier: "to_detail", sender: self)

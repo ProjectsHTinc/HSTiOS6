@@ -12,9 +12,9 @@ class ChooseLanguage: UIViewController {
     var engisSelected = false
     var tamisSelected = false
     var selectedlanguage = String()
+    
     @IBOutlet weak var englishSelected: UIImageView!
     @IBOutlet weak var tamilSelected: UIImageView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class ChooseLanguage: UIViewController {
         // Do any additional setup after loading the view.
         self.englishSelected.image = UIImage(named: "")
         self.tamilSelected.image = UIImage(named: "")
-
     }
     
     @IBAction func english(_ sender: Any) {
@@ -40,7 +39,6 @@ class ChooseLanguage: UIViewController {
             selectedlanguage = ""
             self.englishSelected.image = UIImage(named: "")
         }
-        
     }
     
     @IBAction func tamil(_ sender: Any) {
@@ -66,21 +64,28 @@ class ChooseLanguage: UIViewController {
         if selectedlanguage == "en"
         {
             LocalizationSystem.sharedInstance.setLanguage(languageCode: "en")
+            reNew()
+            
         }
         else if selectedlanguage == "ta"
         {
             LocalizationSystem.sharedInstance.setLanguage(languageCode: "ta")
+            reNew()
         }
         else
         {
             AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: "Please select the language before confirm", complition: {
             })
         }
-        
-        self.performSegue(withIdentifier: "refresh", sender: self)
+//        self.performSegue(withIdentifier: "refresh", sender: self)
+        self.dismiss(animated: true, completion: nil)
         
     }
-    
+
+    func reNew(){
+            //reload application data (renew root view )
+        UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "nav")
+        }
     /*
     // MARK: - Navigation
 

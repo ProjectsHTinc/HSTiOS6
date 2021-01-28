@@ -11,7 +11,7 @@ import YoutubePlayer_in_WKWebView
 class WelcomeVc: UIViewController {
 
     @IBOutlet weak var playerView: WKYTPlayerView!
-    
+    let home = Home()
     /*Get welcome video Url*/
     let presenter = WelcomeVideoPresenter(welcomeVideoServices: WelcomeVideoServices())
     var resp = [VideoData]()
@@ -35,20 +35,12 @@ class WelcomeVc: UIViewController {
     }
     
     @IBAction func close(_ sender: Any) {
+        UserDefaults.standard.setValue("no", forKey: "welcomeViedoKey")
         self.dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
 extension WelcomeVc: VideoView
 {
     func startLoading() {
@@ -67,12 +59,12 @@ extension WelcomeVc: VideoView
             videoUrl = item.video_url ?? ""
         }
         loadWelcomeVideo(url: videoUrl)
+        UserDefaults.standard.setValue("yes", forKey: "welcomeViedoKey")
     }
     
     func setEmpty(errorMessage: String) {
         AlertController.shared.showAlert(targetVc: self, title: "O.P.S", message: errorMessage, complition: {
         })
     }
-    
     
 }

@@ -13,10 +13,11 @@ class HomePageDetail: UIViewController {
     @IBOutlet weak var imageSlider: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var likeOutlet: UIButton!
-    @IBOutlet weak var shareOutlet: UIButton!
+//    @IBOutlet weak var likeOutlet: UIButton!
+//    @IBOutlet weak var shareOutlet: UIButton!
     @IBOutlet weak var descripLabel: UILabel!
     @IBOutlet weak var descrip: UILabel!
+    @IBOutlet weak var navItem: UINavigationItem!
     
     var index = 0
     var inForwardDirection = true
@@ -41,16 +42,24 @@ class HomePageDetail: UIViewController {
         // Do any additional setup after loading the view.
         self.callAPI()
         self.updateDetails()
+//        if let navigationbar = self.navigationController?.navigationBar {
+//            navigationbar.setGradientBackground(colors: [UIColor(red: 11.0/255.0, green: 148.0/255.0, blue: 33.0/255.0, alpha: 1.0), UIColor(red: 6.0/255.0, green: 74.0/255.0, blue: 17.0/255.0, alpha: 1.0)], startPoint: .topLeft, endPoint: .bottomRight)
+//        }
     }
     
+    override func didMove(toParent parent: UIViewController?) {
+        super.didMove(toParent: parent)
+
+        if parent == nil {
+            debugPrint("Back Button pressed.")
+        }
+    }
     
     func callAPI()
     {
         presenter.attachView(view: self)
-        presenter.getHomeDetailResp(user_id: "1", newsfeed_id: newsfeed_id)
+        presenter.getHomeDetailResp(user_id: GlobalVariables.shared.user_id, newsfeed_id: newsfeed_id)
     }
-    
-
     
     func updateDetails() {
         if fromView == "imageAll"
@@ -59,8 +68,8 @@ class HomePageDetail: UIViewController {
             self.dateLabel.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
             self.descrip.isHidden = true
             self.descripLabel.isHidden = true
-            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
-            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+//            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
+//            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
         }
         else
         {
@@ -69,10 +78,9 @@ class HomePageDetail: UIViewController {
             self.descrip.isHidden = false
             self.descripLabel.isHidden = false
             self.descrip.setHTMLFromString(text: descp)
-            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
-            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+//            self.likeOutlet.setTitle(likesCount + " " + "Likes", for: UIControl.State.normal)
+//            self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
         }
-
     }
     
     func startTimer() {
@@ -109,11 +117,11 @@ class HomePageDetail: UIViewController {
         }
     }
 
-    @IBAction func share(_ sender: Any)
-    {
-        
-    }
-    
+//    @IBAction func share(_ sender: Any)
+//    {
+//
+//    }
+//
     /*
     // MARK: - Navigation
 
@@ -125,6 +133,7 @@ class HomePageDetail: UIViewController {
     */
 
 }
+
 extension HomePageDetail : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, HomePageDetailView
 {
     func startLoading() {
@@ -169,6 +178,5 @@ extension HomePageDetail : UICollectionViewDelegate, UICollectionViewDataSource,
     {
         return UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
     }
-    
     
 }

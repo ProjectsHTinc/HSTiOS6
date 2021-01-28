@@ -16,6 +16,7 @@ import UIKit
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
 @available(iOS 13.0, *)
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -26,13 +27,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        // Set initial view controller from Main storyboard as root view controller of UIWindow
-        self.window?.rootViewController = UIStoryboard(name: "Dashboard", bundle: nil).instantiateInitialViewController()
-        // Present window to screen
-        self.window?.makeKeyAndVisible()
+        self.loadBaseContrloler()
 
     }
-
+    
+    func loadBaseContrloler()
+    {
+        let user_id = UserDefaults.standard.object(forKey: UserDefaultsKey.userIDkey.rawValue) ?? ""
+        if user_id as! String == ""
+        {
+            guard let window = self.window else { return }
+            let mainstoryboard:UIStoryboard = UIStoryboard(name: "Dashboard", bundle: nil)
+            let newViewcontroller:UIViewController = mainstoryboard.instantiateViewController(withIdentifier: "nav") as! UINavigationController
+            window.rootViewController = newViewcontroller
+            window.makeKeyAndVisible()
+        }
+        else
+        {
+//            GlobalVariables.shared.CLIENTURL = client_api_url as! String
+//            GlobalVariables.shared.user_id = user_id as! String
+//            GlobalVariables.shared.user_name = userName as! String
+//            GlobalVariables.shared.user_location = userLocation as! String
+//            GlobalVariables.shared.user_Image = userImage as! String
+//            GlobalVariables.shared.constituent_Id = constituent_id as! String
+//            GlobalVariables.shared.user_role = userRole as! String
+//            GlobalVariables.shared.selectedConstituencyName = constituencyName as! String
+            guard let window = self.window else { return }
+            self.window = window
+              // Set initial view controller from Main storyboard as root view controller of UIWindow
+            self.window?.rootViewController = UIStoryboard(name: "Dashboard", bundle: nil).instantiateInitialViewController()
+              // Present window to screen
+            self.window?.makeKeyAndVisible()
+        }
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
@@ -60,7 +88,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 

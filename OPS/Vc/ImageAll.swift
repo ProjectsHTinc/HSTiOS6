@@ -33,7 +33,7 @@ class ImageAll: UIViewController {
     
     func callAPI() {
         presenter.attachView(view: self)
-        presenter.getImagesAll(user_id: "1")
+        presenter.getImagesAll(user_id: GlobalVariables.shared.user_id)
     }
 
 
@@ -49,8 +49,8 @@ class ImageAll: UIViewController {
             vc.nf_cover_image = self.nf_cover_image
             vc.eventTitle = self.eventTitle
             vc.date = self.date
-            vc.likesCount = self.likesCnt
-            vc.shareCount = self.shareCnt
+//            vc.likesCount = self.likesCnt
+//            vc.shareCount = self.shareCnt
             //vc.descp = self.descp
             vc.fromView = "imageAll"
         }
@@ -80,8 +80,8 @@ extension ImageAll : UICollectionViewDelegate, UICollectionViewDataSource, UICol
             cell.imageTitle.text = res.title_ta
 
         }
-        cell.imageLikeOutlet.tag = indexPath.row
-        cell.imageLikeOutlet.addTarget(self, action: #selector(likeButtonImageClicked), for: .touchUpInside)
+//        cell.imageLikeOutlet.tag = indexPath.row
+//        cell.imageLikeOutlet.addTarget(self, action: #selector(likeButtonImageClicked), for: .touchUpInside)
         cell.shadowDecorate()
         return cell
         
@@ -102,8 +102,8 @@ extension ImageAll : UICollectionViewDelegate, UICollectionViewDataSource, UICol
             self.eventTitle = res.title_ta!
         }
         self.date = res.news_date!
-        self.likesCnt = res.likes_count!
-        self.shareCnt = res.share_count!
+//        self.likesCnt = res.likes_count!
+//        self.shareCnt = res.share_count!
         self.newsfeed_id = res.newsfeed_id!
         self.nf_cover_image = res.nf_cover_image!
         self.performSegue(withIdentifier: "to_detail", sender: self)
