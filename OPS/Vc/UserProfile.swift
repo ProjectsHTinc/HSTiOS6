@@ -22,6 +22,7 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
     @IBOutlet weak var emailIdTextField: UITextField!
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
     
     var presenterUpdate = ProfileUpdatePresenter(profileUpdateService:ProfileUpdateService())
     var profileUpdate = [ProfileUpdateData]()
@@ -74,6 +75,11 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
         print(from_userProfile)
         print("12345")
      
+    }
+    
+    override func viewDidLayoutSubviews(){
+
+    saveButton.layerGradient(startPoint: .topLeft, endPoint: .bottomRight, colorArray: [UIColor(red: 11.0 / 255.0, green: 148.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 6.0 / 255.0, green: 74.0 / 255.0, blue: 17.0 / 255.0, alpha: 1.0).cgColor], type: .axial)
     }
     
     func CallAPIProfileDetail ()
@@ -250,7 +256,7 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
     }
     
     func setProfileUpdate(msg:String,status:String){
-//        if  status == "success"{
+        if  status == "success"{
 ////
 //            let alertController = UIAlertController(title: Globals.alertTitle, message: msg, preferredStyle: .alert)
 //
@@ -262,8 +268,15 @@ class UserProfile: UIViewController, UIImagePickerControllerDelegate & UINavigat
 //                alertController.addAction(okAction)
 //
 //            self.present(alertController, animated: true, completion: nil)
-//        }
-        self.performSegue(withIdentifier: "to_settings", sender: self)
+           if from_userProfile == "To_userProfile"
+           {
+              self.performSegue(withIdentifier: "to_DashBoard", sender: self)
+           }
+           else
+           {
+              self.performSegue(withIdentifier: "to_settings", sender: self)
+           }
+        }
     }
         
     func setEmptyUpdate(errorMessage:String){
@@ -303,7 +316,7 @@ extension UserProfile : UITextFieldDelegate, UITextViewDelegate{
 
         return true
     }
-    
+
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
         if nameTextField.isFirstResponder
@@ -462,14 +475,7 @@ extension UserProfile : UITextFieldDelegate, UITextViewDelegate{
            else {
             self.updateAPI(user_id:GlobalVariables.shared.user_id,full_name: self.nameTextField.text!, phone_number: self.phoneNumTextField.text!, email_id: self.emailIdTextField.text!, dob: self.dobTextField.text!, gender: self.genderTextField.text!)
             
-            if from_userProfile == "To_userProfile"
-            {
-                self.performSegue(withIdentifier: "to_DashBoard", sender: self)
-            }
-            else
-            {
-                self.performSegue(withIdentifier: "to_settings", sender: self)
-            }
+          
         }
     }
     

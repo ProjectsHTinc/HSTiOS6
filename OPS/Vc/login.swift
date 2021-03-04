@@ -35,7 +35,8 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
     override func viewDidLayoutSubviews(){
 // Not Used //
 //        backView.addGradient(colors: [UIColor(red: 4.0 / 255.0, green: 105.0 / 255.0, blue: 215.0 / 255.0, alpha: 0.93), UIColor(red: 2.0 / 255.0, green: 53.0 / 255.0, blue: 108.0 / 255.0, alpha: 0.97)], locations: [0.1, 1.0])
-       }
+    }
+    
     func startLoading() {
 //        activityView.isHidden = true
 //        activityView.startAnimating()
@@ -50,6 +51,7 @@ class login: UIViewController,UITextFieldDelegate,LoginView {
          let mobile_otp = login_otp
          self.performSegue(withIdentifier: "to_OTP", sender: mobile_otp)
     }
+    
     func setEmptyLogin(errorMessage: String) {
         AlertController.shared.showAlert(targetVc: self, title: Globals.alertTitle, message: errorMessage, complition: {
         })

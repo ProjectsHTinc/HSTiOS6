@@ -31,6 +31,8 @@ class ViewController: UIViewController {
         self.setUpSegementControl()
         self.preferedLanguage()
         
+     
+        
     }
     
     func preferedLanguage() {
@@ -55,9 +57,11 @@ class ViewController: UIViewController {
       navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-//    override func viewDidLayoutSubviews(){
-//        topView.addGradient(colors: [UIColor(red: 11.0 / 255.0, green: 148.0 / 255.0, blue: 33.0 / 255.0, alpha: 0.93), UIColor(red: 6.0 / 255.0, green: 74.0 / 255.0, blue: 17.0 / 255.0, alpha: 0.90)], locations: [0.1, 1.0])
-//       }
+    override func viewDidLayoutSubviews(){
+
+        topView.layerGradient(startPoint: .topLeft, endPoint: .bottomRight, colorArray: [UIColor(red: 11.0 / 255.0, green: 148.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 6.0 / 255.0, green: 74.0 / 255.0, blue: 17.0 / 255.0, alpha: 1.0).cgColor], type: .axial)
+
+    }
      
     func setUpSegementControl () {
         
@@ -109,4 +113,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

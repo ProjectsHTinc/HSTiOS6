@@ -15,6 +15,7 @@ class ChooseLanguage: UIViewController {
     
     @IBOutlet weak var englishSelected: UIImageView!
     @IBOutlet weak var tamilSelected: UIImageView!
+    @IBOutlet weak var confirmButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,11 @@ class ChooseLanguage: UIViewController {
         // Do any additional setup after loading the view.
         self.englishSelected.image = UIImage(named: "")
         self.tamilSelected.image = UIImage(named: "")
+    }
+    
+    override func viewDidLayoutSubviews(){
+
+//        confirmButton.layerGradient(startPoint: .topLeft, endPoint: .bottomRight, colorArray: [UIColor(red: 11.0 / 255.0, green: 148.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 6.0 / 255.0, green: 74.0 / 255.0, blue: 17.0 / 255.0, alpha: 1.0).cgColor], type: .axial)
     }
     
     @IBAction func english(_ sender: Any) {

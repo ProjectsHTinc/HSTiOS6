@@ -34,6 +34,7 @@ class AppSettings: UIViewController {
             GlobalVariables.shared.user_id = ""
             GlobalVariables.shared.userName = ""
             GlobalVariables.shared.user_Image = ""
+//            GlobalVariables.shared.userEmailId = ""
             
             UserDefaults.standard.clearUserData()
             

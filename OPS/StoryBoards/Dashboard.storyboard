@@ -72,7 +72,7 @@
             <objects>
                 <viewController id="ObC-co-FqE" customClass="ChooseLanguage" customModule="OPS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rGi-UC-bKk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLO-EZ-RcL">
@@ -133,7 +133,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qh-HV-Lp6">
-                                        <rect key="frame" x="85" y="81" width="49" height="17.5"/>
+                                        <rect key="frame" x="85" y="81" width="53.5" height="21"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="15"/>
                                         <color key="textColor" name="blackColor"/>
@@ -185,10 +185,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zq-cS-k72">
-                                        <rect key="frame" x="33" y="206" width="348" height="45"/>
+                                        <rect key="frame" x="57" y="206" width="300" height="45"/>
                                         <color key="backgroundColor" red="0.043137254901960784" green="0.58039215686274503" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="0zy-Hc-39p"/>
+                                            <constraint firstAttribute="height" constant="45" id="NRU-4e-Glo"/>
+                                            <constraint firstAttribute="width" constant="300" id="jSv-tM-RrZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="15"/>
                                         <state key="normal" title="Confirm">
@@ -207,28 +208,29 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="f87-aa-0Tz" firstAttribute="top" secondItem="MzD-VL-knS" secondAttribute="bottom" constant="24" id="0cB-sk-30S"/>
-                                    <constraint firstItem="2zq-cS-k72" firstAttribute="top" secondItem="naj-JQ-gJk" secondAttribute="bottom" constant="20" id="3fq-jZ-nor"/>
                                     <constraint firstAttribute="height" constant="269" id="3kh-b7-Gue"/>
                                     <constraint firstItem="MzD-VL-knS" firstAttribute="top" secondItem="Se9-Tg-3wC" secondAttribute="bottom" constant="16" id="5b4-cp-Uet"/>
                                     <constraint firstItem="naj-JQ-gJk" firstAttribute="leading" secondItem="mLO-EZ-RcL" secondAttribute="leading" constant="33" id="6cn-gx-fqy"/>
                                     <constraint firstAttribute="trailing" secondItem="bGa-Um-CPn" secondAttribute="trailing" constant="51" id="6yz-6h-1ap"/>
                                     <constraint firstAttribute="trailing" secondItem="dJ0-is-Z7x" secondAttribute="trailing" constant="33" id="A87-6V-qqA"/>
-                                    <constraint firstItem="2zq-cS-k72" firstAttribute="leading" secondItem="mLO-EZ-RcL" secondAttribute="leading" constant="33" id="APO-JQ-jmd"/>
                                     <constraint firstItem="Se9-Tg-3wC" firstAttribute="top" secondItem="YB7-c4-ti9" secondAttribute="bottom" constant="26" id="Acr-PG-mTe"/>
                                     <constraint firstItem="Se9-Tg-3wC" firstAttribute="leading" secondItem="mLO-EZ-RcL" secondAttribute="leading" constant="35" id="Arw-Wh-l0e"/>
                                     <constraint firstItem="HhC-9W-iuz" firstAttribute="top" secondItem="MzD-VL-knS" secondAttribute="bottom" constant="21" id="FkV-TO-ZIV"/>
-                                    <constraint firstAttribute="trailing" secondItem="2zq-cS-k72" secondAttribute="trailing" constant="33" id="GEr-Hb-WRA"/>
                                     <constraint firstItem="c68-A8-b0x" firstAttribute="top" secondItem="MzD-VL-knS" secondAttribute="bottom" constant="16" id="GsF-Se-gKR"/>
                                     <constraint firstItem="HhC-9W-iuz" firstAttribute="leading" secondItem="naj-JQ-gJk" secondAttribute="trailing" constant="12" id="I73-ht-nob"/>
                                     <constraint firstItem="dJ0-is-Z7x" firstAttribute="leading" secondItem="Se9-Tg-3wC" secondAttribute="trailing" constant="12" id="JGu-HR-8V8"/>
                                     <constraint firstItem="XjT-Jw-vfa" firstAttribute="leading" secondItem="mLO-EZ-RcL" secondAttribute="leading" constant="33" id="K2E-qR-SqV"/>
                                     <constraint firstItem="YB7-c4-ti9" firstAttribute="centerX" secondItem="mLO-EZ-RcL" secondAttribute="centerX" id="KzT-k2-w2x"/>
+                                    <constraint firstItem="2zq-cS-k72" firstAttribute="top" secondItem="naj-JQ-gJk" secondAttribute="bottom" constant="20" id="MGx-cD-RkY"/>
                                     <constraint firstItem="s76-ht-kUu" firstAttribute="top" secondItem="MzD-VL-knS" secondAttribute="bottom" constant="26" id="OT3-6G-aZA"/>
+                                    <constraint firstItem="2zq-cS-k72" firstAttribute="leading" secondItem="mLO-EZ-RcL" secondAttribute="leading" constant="57" id="PJv-wp-iDU"/>
                                     <constraint firstItem="XjT-Jw-vfa" firstAttribute="top" secondItem="YB7-c4-ti9" secondAttribute="bottom" constant="26" id="U67-0W-ZpX"/>
                                     <constraint firstItem="f87-aa-0Tz" firstAttribute="leading" secondItem="naj-JQ-gJk" secondAttribute="trailing" constant="12" id="ULU-CW-Pzm"/>
                                     <constraint firstItem="6qh-HV-Lp6" firstAttribute="leading" secondItem="XjT-Jw-vfa" secondAttribute="trailing" constant="12" id="a8I-gA-oZN"/>
                                     <constraint firstItem="c68-A8-b0x" firstAttribute="leading" secondItem="mLO-EZ-RcL" secondAttribute="leading" constant="33" id="gWO-wd-21U"/>
+                                    <constraint firstAttribute="bottom" secondItem="2zq-cS-k72" secondAttribute="bottom" constant="18" id="hv9-bK-Pmc"/>
                                     <constraint firstItem="YB7-c4-ti9" firstAttribute="top" secondItem="mLO-EZ-RcL" secondAttribute="top" constant="13" id="iYj-JR-fpV"/>
+                                    <constraint firstAttribute="trailing" secondItem="2zq-cS-k72" secondAttribute="trailing" constant="57" id="is9-1q-vAk"/>
                                     <constraint firstItem="naj-JQ-gJk" firstAttribute="top" secondItem="MzD-VL-knS" secondAttribute="bottom" constant="16" id="j0H-oT-YpX"/>
                                     <constraint firstAttribute="trailing" secondItem="MzD-VL-knS" secondAttribute="trailing" constant="33" id="jPi-SJ-P95"/>
                                     <constraint firstAttribute="trailing" secondItem="HhC-9W-iuz" secondAttribute="trailing" constant="33" id="kaM-5v-KBR"/>
@@ -237,6 +239,7 @@
                                     <constraint firstItem="dJ0-is-Z7x" firstAttribute="top" secondItem="YB7-c4-ti9" secondAttribute="bottom" constant="30" id="ofk-ma-Ap0"/>
                                     <constraint firstItem="6qh-HV-Lp6" firstAttribute="top" secondItem="YB7-c4-ti9" secondAttribute="bottom" constant="34" id="qNf-Ei-RI3"/>
                                     <constraint firstItem="MzD-VL-knS" firstAttribute="leading" secondItem="mLO-EZ-RcL" secondAttribute="leading" constant="33" id="v39-TV-yAZ"/>
+                                    <constraint firstItem="2zq-cS-k72" firstAttribute="centerX" secondItem="mLO-EZ-RcL" secondAttribute="centerX" id="ydM-yE-6Lh"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -255,6 +258,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="y5c-ia-ZHH"/>
                     <connections>
+                        <outlet property="confirmButton" destination="2zq-cS-k72" id="Tmw-uv-XqA"/>
                         <outlet property="englishSelected" destination="bGa-Um-CPn" id="hIo-Gq-Vlf"/>
                         <outlet property="tamilSelected" destination="s76-ht-kUu" id="fHh-Jt-N2k"/>
                         <segue destination="Xkk-HV-9c8" kind="show" identifier="refresh" id="1mT-KB-apo"/>
@@ -345,7 +349,7 @@
             <objects>
                 <viewController storyboardIdentifier="welcomeVc" id="PkP-X7-a8B" customClass="WelcomeVc" customModule="OPS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iGP-C7-Qc9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L63-ki-RGi">
@@ -362,7 +366,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Know more about O.Pannerselvam APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1u-jI-otD">
-                                        <rect key="frame" x="66" y="48" width="214" height="34"/>
+                                        <rect key="frame" x="56.5" y="48" width="233.5" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="xX3-Yw-1XH"/>
                                         </constraints>
@@ -432,6 +436,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="a3S-1V-gYL"/>
                     <connections>
+                        <outlet property="closeButon" destination="bjb-dz-TqA" id="hl6-1K-G8J"/>
                         <outlet property="playerView" destination="PJJ-tK-1LR" id="cjd-Zf-gTP"/>
                     </connections>
                 </viewController>
@@ -795,7 +800,7 @@
                                                     <rect key="frame" x="5" y="7" width="404" height="250"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Independence Day rehearsals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmY-uS-l82">
-                                                            <rect key="frame" x="18" y="167" width="368" height="16.5"/>
+                                                            <rect key="frame" x="18" y="167" width="368" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="308" id="Gdh-Ww-5Fv"/>
                                                             </constraints>
@@ -804,7 +809,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Greater Chennai Traffic Police has made Canges to the movement of traffic in view of..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwY-Fh-yqJ">
-                                                            <rect key="frame" x="18" y="189.5" width="368" height="30.5"/>
+                                                            <rect key="frame" x="18" y="193" width="368" height="36.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="308" id="OUY-0F-NQz"/>
                                                             </constraints>
@@ -928,7 +933,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Du-OJ-t4a">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="730.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="845.5"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Yox-i1-MjM">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
@@ -974,7 +979,7 @@
                                                 </connections>
                                             </collectionView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idq-jx-suD">
-                                                <rect key="frame" x="0.0" y="238" width="414" height="521"/>
+                                                <rect key="frame" x="0.0" y="238" width="414" height="603"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Independence Day rehearsals" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suE-9F-Jnd">
                                                         <rect key="frame" x="24" y="19" width="366" height="21"/>
@@ -1013,7 +1018,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s3j-fR-MAv">
-                                                        <rect key="frame" x="24" y="121" width="366" height="227.5"/>
+                                                        <rect key="frame" x="24" y="121" width="366" height="309.5"/>
                                                         <string key="text">As per the modifications, the stretch of Kamarajar Salai from Napier Bridge up to RBI subway north on Rajaji Salai and Flag Staff Salai will be closed for traffic. Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via Rajaji Salai may have to take the route via Swami Sivananda Salai, Anna Salai, Muthusamy Bridge, Muthusamy Salai, R A Mandram and North Fort Salai to reach the destination. Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via Rajaji Salai may have to take the route via Swami Sivananda Salai, Anna Salai, Muthusamy Bridge, Muthusamy Salai, R A Mandram and North Fort Salai to reach the destination. Vehicles coming from Kamarajar Salai and intending to proceed towards Parry’s Corner via</string>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1339,7 +1344,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.043137254899999998" green="0.58039215690000001" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Lvb-0q-ZeN" secondAttribute="bottom" id="RyD-wA-dSc"/>
                                     <constraint firstAttribute="height" constant="65" id="eqH-SX-1th"/>
@@ -2280,7 +2284,7 @@
             <objects>
                 <viewController id="aFq-jU-8BY" customClass="AboutParty" customModule="OPS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ypd-rG-PA4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bSD-BS-GtX">
@@ -2610,7 +2614,7 @@
             <objects>
                 <viewController id="0IU-IH-RuS" customClass="PartyDetails" customModule="OPS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CZM-Hg-SGa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="451"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-Jj-afB">
@@ -3178,7 +3182,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bqB-VS-dAn"/>
+        <segue reference="tKG-tZ-8XK"/>
         <segue reference="MEc-R0-D4b"/>
         <segue reference="1mT-KB-apo"/>
     </inferredMetricsTieBreakers>

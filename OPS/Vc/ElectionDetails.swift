@@ -38,6 +38,11 @@ class ElectionDetails: UIViewController,ElectionDetailView,UITableViewDelegate,U
     @IBAction func dissmissAction(_ sender: Any) {
        self.dismiss(animated: true, completion: nil)
     }
+    
+    override func viewDidLayoutSubviews(){
+
+        navView.layerGradient(startPoint: .topLeft, endPoint: .bottomRight, colorArray: [UIColor(red: 11.0 / 255.0, green: 148.0 / 255.0, blue: 33.0 / 255.0, alpha: 1.0).cgColor, UIColor(red: 6.0 / 255.0, green: 74.0 / 255.0, blue: 17.0 / 255.0, alpha: 1.0).cgColor], type: .axial)
+    }
    
     
     func callAPI() {

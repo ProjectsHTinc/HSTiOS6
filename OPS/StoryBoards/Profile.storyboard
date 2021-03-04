@@ -454,6 +454,7 @@
                         <outlet property="nameTextField" destination="fqb-uE-hiE" id="dEp-dk-DGI"/>
                         <outlet property="phoneNumLbl" destination="4ke-Lb-NE7" id="RsB-j8-U9p"/>
                         <outlet property="phoneNumTextField" destination="dDc-vf-dlE" id="ax2-kF-AhJ"/>
+                        <outlet property="saveButton" destination="gdv-sK-Trz" id="r7O-tr-lV4"/>
                         <outlet property="userImage" destination="HXd-km-qkQ" id="s7m-B0-oX4"/>
                         <segue destination="m6N-Z1-sGa" kind="show" identifier="to_settings" id="Uaw-Up-Yip"/>
                         <segue destination="OBQ-ew-QTG" kind="show" identifier="to_DashBoard" id="wwm-c4-K1j"/>

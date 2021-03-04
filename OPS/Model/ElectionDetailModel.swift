@@ -45,3 +45,4 @@ class ElectionDetailModel: NSObject {
      }
 
 }
+ 
