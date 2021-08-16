@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="04U-i9-VhS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="04U-i9-VhS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -331,7 +331,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yl0-oT-7JH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3296" y="-47"/>
+            <point key="canvasLocation" x="3438" y="-51"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="cxA-z7-uhq">
@@ -341,22 +341,102 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5J8-Bt-nXK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3315" y="-9"/>
+            <point key="canvasLocation" x="3457" y="42"/>
         </scene>
-        <!--Dashboard-->
+        <!--chooseLanguage-->
         <scene sceneID="a1g-IP-QvH">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="changeLanuage" storyboardName="Dashboard" id="d0t-ee-q1h" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="WelcomeVc" referencedIdentifier="chooseLanguage" id="d0t-ee-q1h" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="zBT-wr-a04"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kWk-7I-Tz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3363" y="27"/>
+            <point key="canvasLocation" x="3483" y="-5"/>
+        </scene>
+        <!--Notification Details-->
+        <scene sceneID="LJb-5r-qrZ">
+            <objects>
+                <viewController storyboardIdentifier="notification" id="SuO-9Y-mn4" customClass="NotificationDetails" customModule="OPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0YX-aj-bX4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notification-1" translatesAutoresizingMaskIntoConstraints="NO" id="DnE-PR-uuy">
+                                <rect key="frame" x="106.5" y="94" width="201.5" height="176"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing here!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOh-TS-x2m">
+                                <rect key="frame" x="52" y="308" width="320" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="NPy-c0-3eb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check for the notification after sometime" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daj-g7-DQx">
+                                <rect key="frame" x="52" y="355" width="320" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbp-kn-R5a">
+                                <rect key="frame" x="72" y="423" width="270" height="39"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.58039215690000001" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="Jut-t7-HWr"/>
+                                    <constraint firstAttribute="width" constant="270" id="wPj-1z-LXJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Back To Home">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backHomeAction:" destination="SuO-9Y-mn4" eventType="touchUpInside" id="b6J-A6-u6b"/>
+                                    <segue destination="7Rz-Vf-uDc" kind="show" id="YnQ-m5-V2U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BI5-6J-uwD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kOh-TS-x2m" firstAttribute="leading" secondItem="BI5-6J-uwD" secondAttribute="leading" constant="52" id="345-Kk-V1E"/>
+                            <constraint firstItem="Zbp-kn-R5a" firstAttribute="top" secondItem="Daj-g7-DQx" secondAttribute="bottom" constant="25" id="68E-qQ-Lk0"/>
+                            <constraint firstItem="Daj-g7-DQx" firstAttribute="leading" secondItem="BI5-6J-uwD" secondAttribute="leading" constant="52" id="DPE-1d-4OC"/>
+                            <constraint firstItem="BI5-6J-uwD" firstAttribute="trailing" secondItem="Daj-g7-DQx" secondAttribute="trailing" constant="42" id="MYa-rp-EmL"/>
+                            <constraint firstItem="BI5-6J-uwD" firstAttribute="trailing" secondItem="Zbp-kn-R5a" secondAttribute="trailing" constant="72" id="Mp2-WF-Sjy"/>
+                            <constraint firstItem="Zbp-kn-R5a" firstAttribute="leading" secondItem="BI5-6J-uwD" secondAttribute="leading" constant="72" id="NJb-N9-Iem"/>
+                            <constraint firstItem="Daj-g7-DQx" firstAttribute="top" secondItem="kOh-TS-x2m" secondAttribute="bottom" constant="22" id="RoD-Ke-gTD"/>
+                            <constraint firstItem="kOh-TS-x2m" firstAttribute="top" secondItem="DnE-PR-uuy" secondAttribute="bottom" constant="38" id="cGR-ya-SJT"/>
+                            <constraint firstItem="BI5-6J-uwD" firstAttribute="trailing" secondItem="kOh-TS-x2m" secondAttribute="trailing" constant="42" id="f4x-Av-vsW"/>
+                            <constraint firstItem="DnE-PR-uuy" firstAttribute="centerX" secondItem="0YX-aj-bX4" secondAttribute="centerX" id="gLD-yZ-ZY0"/>
+                            <constraint firstItem="Zbp-kn-R5a" firstAttribute="centerX" secondItem="0YX-aj-bX4" secondAttribute="centerX" id="pkE-MS-xBb"/>
+                            <constraint firstItem="DnE-PR-uuy" firstAttribute="top" secondItem="BI5-6J-uwD" secondAttribute="top" constant="50" id="xsJ-he-WSe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cJ7-ho-fUg"/>
+                    <connections>
+                        <outlet property="backHomeButton" destination="Zbp-kn-R5a" id="pOv-EA-fUa"/>
+                        <outlet property="notoficationDetailLabel" destination="Daj-g7-DQx" id="kCF-sx-pnp"/>
+                        <outlet property="statusLabel" destination="kOh-TS-x2m" id="9Eq-Qg-lrW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fo-Ph-hhM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="92"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YnQ-m5-V2U"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="bell" width="13.5" height="16"/>
         <image name="logout (4)" width="18.5" height="18.5"/>
+        <image name="notification-1" width="201.5" height="176"/>
         <image name="profile-1" width="223.5" height="223.5"/>
         <image name="right-arrow" width="8" height="12.5"/>
         <image name="share (2)" width="13.5" height="15"/>

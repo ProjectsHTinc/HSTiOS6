@@ -41,12 +41,15 @@ class TabbarController: UITabBarController, UITabBarControllerDelegate, UISearch
         searchController.delegate = self
         let searchBar = searchController.searchBar
         searchBar.tintColor = UIColor.white
+//        searchBar.backgroundColor = UIColor.white
        
         searchBar.barTintColor = UIColor.white
         searchController.searchBar.delegate = self
 
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
             textfield.textColor = UIColor.blue
+            textfield.backgroundColor = UIColor.white
+            
             if let backgroundview = textfield.subviews.first {
                 //  Background color
                 backgroundview.backgroundColor = UIColor.white

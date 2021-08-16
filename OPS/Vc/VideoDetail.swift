@@ -13,8 +13,8 @@ class VideoDetail: UIViewController {
     @IBOutlet weak var playerView: WKYTPlayerView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDate: UILabel!
-    @IBOutlet weak var likeOutlet: UIButton!
-    @IBOutlet weak var shareOutlet: UIButton!
+//    @IBOutlet weak var likeOutlet: UIButton!
+//    @IBOutlet weak var shareOutlet: UIButton!
     
     var eventName = String()
     var date = String()
@@ -34,8 +34,8 @@ class VideoDetail: UIViewController {
         self.playerView.load(withVideoId: videoId)
         self.eventTitle.text = eventName
         self.eventDate.text = self.formattedDateFromString(dateString: date, withFormat: "dd MMM yyyy")
-        self.likeOutlet.setTitle(likeCount + " " + "Likes", for: UIControl.State.normal)
-        self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
+//        self.likeOutlet.setTitle(likeCount + " " + "Likes", for: UIControl.State.normal)
+//        self.shareOutlet.setTitle(shareCount + " " + "Share", for: UIControl.State.normal)
     }
     
     @IBAction func likeAction(_ sender: Any) {
